@@ -155,3 +155,55 @@ let personInfoTwo = `I am ${fullName}. I am ${age}. I live in ${country}.`; //ES
 let personInfoThree = `I am ${fullName}. I live in ${city}, ${country}. I am a ${job}. I teach ${language}.`;
 console.log(personInfoTwo);
 console.log(personInfoThree);
+
+//Syntax
+`string literal expression`;
+//`String literal text ${expression}`;
+
+let ab = 2;
+let ba = 3;
+
+console.log(`${ab} is greater than ${ba}: ${ab > ba}`);
+
+//String Methods
+
+//length: The string length method returns the number of characters in a string included empty space.
+let js = "JavaScript";
+console.log(js.length);
+
+console.log(firstName.length);
+
+//Accessing characters in a string: We can access each character in a string using its index.
+// In programming, counting starts from 0.
+// The first index of the string is zero, and the last index is the length of the string minus one.
+
+let string = "JavaScript";
+
+let firstLetter = string[0];
+console.log(firstLetter);
+
+let thirdLetter = string[2];
+console.log(thirdLetter);
+
+let lastLetter = string[9];
+console.log(lastLetter);
+
+let lastIndex = string.length - 1;
+console.log(string[lastIndex]);
+
+//toUpperCase(): this method changes the string to uppercase letters.
+
+let upperCase = string.toUpperCase();
+console.log(upperCase);
+
+//toLowerCase(): this method changes the string to lowercase letters.
+
+let lowerCase = string.toLowerCase();
+console.log(lowerCase);
+
+//substr(): It takes two arguments, the starting index and number of characters to slice.
+const text = "Hello, world!";
+const part = text.substr(7, 5); // Starting at index 7, extract 5 characters
+console.log(part); // Output will be "world"
+
+console.log(string.substr(4, 5));
