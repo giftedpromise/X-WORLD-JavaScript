@@ -207,3 +207,146 @@ const part = text.substr(7, 5); // Starting at index 7, extract 5 characters
 console.log(part); // Output will be "world"
 
 console.log(string.substr(4, 5));
+
+//substring(): It takes two arguments, the starting index and the stopping index
+//but it doesn't include the character at the stopping index.
+
+console.log(string.substring(0, 4)); // Java
+console.log(string.substring(4, 10)); // Script
+
+let countries = "Finland, Sweden, Norway, Denmark, and Iceland";
+
+let newCountries = countries.split();
+console.log(newCountries);
+console.log(countries.split(", "));
+
+const texts = "apple,banana,cherry,dragonfruit";
+const fruits = texts.split(",", 2); // Split at each comma, but limit to 2 elements
+console.log(fruits); // Output will be ["apple", "banana"]
+
+//trim(): Removes trailing space in the beginning or the end of a string.
+
+let string1 = "   30 Days Of JavaScript   ";
+console.log(string1.trim());
+
+//includes(): It takes a substring argument and it checks if substring argument exists in the string. includes() returns a boolean.
+//If a substring exist in a string, it returns true, otherwise it returns false.
+
+let string2 = "30 Days Of JavaScript";
+
+console.log(string2.includes("Days"));
+console.log(string2.includes("days")); // false - it is case sensitive!
+console.log(string2.includes("Script")); // true
+console.log(string2.includes("script")); // false
+console.log(string2.includes("java")); // false
+console.log(string2.includes("Java")); // true
+
+//replace(): takes as a parameter the old substring and a new substring.
+
+let string3 = "30 Days Of JavaScript";
+
+console.log(string3.replace("JavaScript", "Python"));
+
+//charAt(): Takes index and it returns the value at that index
+
+console.log(string.charAt(3));
+
+let lastIndex1 = string.length - 1;
+console.log(string.charAt(lastIndex1)); // t
+
+//DAY TWO CHALLENGE
+
+let dayTwo = "EXERCISE TWO";
+console.log(dayTwo);
+
+//1. Declare a variable named challenge and assign it to an initial value '30 Days Of JavaScript'.
+
+let answer = "30 Days Of JavaScript";
+
+//2. Print the string on the browser console using console.log()
+console.log(answer);
+
+//3. Print the length of the string on the browser console using console.log()
+console.log(answer.length);
+
+//4. Change all the string characters to capital letters using toUpperCase() method
+let answerUpper = answer.toUpperCase();
+console.log(answerUpper);
+
+//5. Change all the string characters to lowercase letters using toLowerCase() method
+let answerLower = answer.toLowerCase();
+console.log(answerLower);
+
+//6. Cut (slice) out the first word of the string using substr() or substring() method
+let slicedAnswer = answer.substr(0, 2);
+
+console.log(slicedAnswer);
+
+//Slice out the phrase Days Of JavaScript from 30 Days Of JavaScript.
+let startIndex = answer.indexOf("Days");
+let length = "Days Of JavaScript".length;
+
+let extractedPhrase = answer.substr(startIndex, length);
+console.log(extractedPhrase);
+
+//DAY THREE
+//TOPICS: Booleans, Operator and Dates
+
+//Booleans: A boolean data type represents one of the two values:true or false.
+//Boolean value is either true or false.
+
+let isLightOn = true;
+let isRaining = false;
+let isHungry = false;
+
+let truValue = 4 > 3; // true
+let falseValue = 4 < 3; // false
+
+/* Truthy values
+All numbers(positive and negative) are truthy except zero
+All strings are truthy except an empty string ('')
+The boolean true
+
+Falsy values
+0
+0n
+null
+undefined
+NaN
+the boolean false
+'', "", ``, empty string
+
+
+Undefined
+If we declare a variable and if we do not assign a value, the value will be undefined. In addition to this, 
+if a function is not returning the value, it will be undefined.
+
+*/
+
+let firstName1;
+console.log(firstName1); //not defined, because it is not assigned to a value yet
+
+//Null
+let empty = null;
+console.log(empty); // -> null , means no value
+
+//OPERATORS
+
+//Assignment operators
+//An equal sign in JavaScript is an assignment operator. It uses to assign a variable.
+
+let firstName2 = "Asabeneh";
+let country1 = "Finland";
+
+/* 
+Arithmetic Operators
+Arithmetic operators are mathematical operators.
+
+Addition(+): a + b
+Subtraction(-): a - b
+Multiplication(*): a * b
+Division(/): a / b
+Modulus(%): a % b
+Exponential(**): a ** b
+
+*/
