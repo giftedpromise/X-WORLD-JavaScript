@@ -350,3 +350,109 @@ Modulus(%): a % b
 Exponential(**): a ** b
 
 */
+
+let numOne = 4;
+let numTwo = 3;
+let sum = numOne + numTwo;
+let diff = numOne - numTwo;
+let mult = numOne * numTwo;
+let div = numOne / numTwo;
+let remainder = numOne % numTwo;
+let powerOf = numOne ** numTwo;
+
+console.log(sum, diff, mult, div, remainder, powerOf); // 7,1,12,1.33,1, 64
+
+//Comparison Operators
+//In programming we compare values, we use comparison operators to compare two values.
+//We check if a value is greater or less or equal to other value.
+
+//Examples of comparison operators <, >, ==, !=, ===, !==, <=, >=
+
+console.log(3 > 2); // true, because 3 is greater than 2
+console.log(3 >= 2); // true, because 3 is greater than 2
+console.log(3 < 2); // false,  because 3 is greater than 2
+console.log(2 < 3); // true, because 2 is less than 3
+console.log(2 <= 3); // true, because 2 is less than 3
+console.log(3 == 2); // false, because 3 is not equal to 2
+console.log(3 != 2); // true, because 3 is not equal to 2
+console.log(3 == "3"); // true, compare only value
+console.log(3 === "3");
+
+//Logical Operators
+
+//The following symbols are the common logical operators: &&(ampersand) , ||(pipe) and !(negation).
+// The && operator gets true only if the two operands are true.
+//The || operator gets true either of the operand is true.
+// The ! operator negates true to false and false to true.
+
+// && ampersand operator example
+
+const check1 = 4 > 3 && 10 > 5; // true && true -> true
+const check2 = 4 > 3 && 10 < 5; // true && false -> false
+const check3 = 4 < 3 && 10 < 5; // false && false -> false
+
+// || pipe or operator, example
+
+const check5 = 4 > 3 || 10 > 5; // true  || true -> true
+const check6 = 4 > 3 || 10 < 5; // true  || false -> true
+const check7 = 4 < 3 || 10 < 5; // false || false -> false
+
+//! Negation examples
+
+let check8 = 4 > 3; // true
+let check9 = !(4 > 3); //  false
+let isLightOn1 = true;
+let isLightOff = !isLightOn; // false
+let isMarried1 = !false; // true
+
+//Increment Operator
+
+//In JavaScript we use the increment operator to increase a value stored in a variable.
+//The increment could be pre or post increment.
+
+//Pre-increment
+let count = 5;
+console.log(++count); //6
+console.log(count); //6
+
+//Post-increment
+
+let count1 = 5;
+console.log(count1++); // 5
+console.log(count1); // 6
+
+//Decrement Operator
+//In JavaScript we use the decrement operator to decrease a value stored in a variable.
+//The decrement could be pre or post decrement.
+
+//Pre-decrement (--variable)
+let x = 5;
+let result = --x; // x is decremented to 4 first, then result is set to 6
+console.log(result); // Output: 4
+console.log(x); // Output: 4
+
+//Post-decrement (--variable)
+let y = 5;
+let result1 = y--; // result is set to 5 first, then y is decremented to 5
+console.log(result1); // Output: 5
+console.log(y); // Output: 4
+
+//Ternary Operators: Ternary operator allows to write a condition.
+let isRaining1 = true;
+isRaining1
+  ? console.log("You need a Rain coat.")
+  : console.log("You don't need a Rain coat.");
+isRaining1 = false;
+isRaining1
+  ? console.log("You need a Rain coat.")
+  : console.log("You don't need a Rain coat.");
+
+let number = 5;
+number > 0
+  ? console.log(`${number} is a positive mumber`)
+  : console.log(`${number} is a negative mumber`);
+
+number = -5;
+number > 0
+  ? console.log(`${number} is a positive mumber`)
+  : console.log(`${number} is a negative mumber`);
