@@ -844,3 +844,81 @@ if (
 } else {
   console.log("Invalid Month");
 }
+
+/* Check if a day is weekend day or a working day. Your script will take day as an input.
+    What is the day  today? Saturday
+    Saturday is a weekend.
+
+    What is the day today? saturDaY
+    Saturday is a weekend.
+
+    What is the day today? Friday
+    Friday is a working day.
+
+    What is the day today? FrIDAy
+    Friday is a working day.
+
+    */
+
+let day = prompt("Enter the day of the week");
+
+if (day === "Saturday" || day === "Sunday") {
+  console.log(`${day} is a weekend.`);
+} else {
+  console.log(`${day} is a working day.`);
+}
+
+//DAY FIVE
+//TOPIC: ARRAYS
+
+/* In contrast to variables, an array can store multiple values.
+ Each value in an array has an index, and each index has a reference in a memory address.
+ Each value can be accessed by using their indexes. 
+The index of an array starts from zero, 
+and the index of the last element is less by one from the length of the array.
+An array is a collection of different data types which are ordered and changeable(modifiable).
+ An array allows storing duplicate elements and different data types. 
+An array can be empty, or it may have different data type values.
+
+
+How to create an empty array
+In JavaScript, we can create an array in different ways. 
+Let us see different ways to create an array. 
+It is very common to use const instead of let to declare an array variable.
+ If you ar using const it means you do not use that variable name again.
+*/
+
+//1. Using Array constructor
+// syntax
+const arr = Array();
+// or
+// let arr = new Array()
+console.log(arr); // []
+
+//2. Using square brackets([])
+// syntax
+// This the most recommended way to create an empty list
+const arr2 = [];
+console.log(arr2);
+
+//HOW TO CREATE ARRAYS
+
+const numbers = [0, 3.14, 9.81, 37, 98.6, 100]; // array of numbers
+
+const vegetables = ["Tomato", "Potato", "Cabbage", "Onion", "Carrot"]; // array of strings, vegetables
+const animalProducts = ["milk", "meat", "butter", "yoghurt"]; // array of strings, products
+const webTechs = ["HTML", "CSS", "JS", "React", "Redux", "Node", "MongDB"]; // array of web technologies
+
+// Print the array and its length
+
+console.log("Numbers:", numbers);
+console.log("Number of numbers:", numbers.length);
+
+console.log("Vegetables:", vegetables);
+console.log("Number of vegetables:", vegetables.length);
+
+console.log("Animal products:", animalProducts);
+console.log("Number of animal products:", animalProducts.length);
+
+console.log("Web technologies:", webTechs);
+console.log("Number of web technologies:", webTechs.length);
