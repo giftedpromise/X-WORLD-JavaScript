@@ -922,3 +922,30 @@ console.log("Number of animal products:", animalProducts.length);
 
 console.log("Web technologies:", webTechs);
 console.log("Number of web technologies:", webTechs.length);
+
+//Array can have items of different data types
+const arr3 = [
+  "Asabeneh",
+  250,
+  true,
+  { country: "Finland", city: "Helsinki" },
+  { skills: ["HTML", "CSS", "JS", "React", "Python"] },
+]; // arr containing different data types
+console.log(arr3);
+
+let JScript = "JavaScript";
+const charsInJavaScript = jScript.split("");
+
+console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
+
+let companiesString = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon";
+let companies = companiesString.split(" , ");
+
+console.log(companies);
+
+let txt =
+  "I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.";
+let words = txt.split("  ");
+
+//Accessing array items using index
+//We access each element in an array using their index. An array index starts from 0.
