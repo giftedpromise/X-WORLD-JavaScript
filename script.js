@@ -966,3 +966,52 @@ let lastIndex2 = fruits2.length - 1;
 lastFruit = fruits[lastIndex];
 
 console.log(lastFruit); // lemon
+
+const numbers3 = [0, 3.14, 9.81, 37, 98.6, 100]; // set of numbers
+
+console.log(numbers3.length); // => to know the size of the array, which is 6
+console.log(numbers3); // -> [0, 3.14, 9.81, 37, 98.6, 100]
+console.log(numbers3[0]); //  -> 0
+console.log(numbers3[5]); //  -> 100
+
+let lastIndex3 = numbers.length - 1;
+console.log(numbers3[lastIndex]); // -> 100
+
+const webTechs1 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+]; // List of web technologies
+
+console.log(webTechs1); // all the array items
+console.log(webTechs1.length); // => to know the size of the array, which is 7
+console.log(webTechs1[0]); //  -> HTML
+console.log(webTechs1[6]); //  -> MongoDB
+
+let lastIndex4 = webTechs1.length - 1;
+console.log(webTechs1[lastIndex4]); // -> MongoDB
+
+const shoppingCart = [
+  "Milk",
+  "Mango",
+  "Tomato",
+  "Potato",
+  "Avocado",
+  "Meat",
+  "Eggs",
+  "Sugar",
+]; // List of food products
+
+console.log(shoppingCart); // -> all shoppingCart in array
+console.log(shoppingCart[0]); //  -> Milk
+console.log(shoppingCart[7]); //  -> Sugar
+
+let lastIndex5 = shoppingCart.length - 1;
+console.log(shoppingCart[lastIndex5]); //  -> Sugar
+
+//Modifying array element
+//An array is mutable(modifiable). Once an array is created, we can modify the contents of the array elements.
