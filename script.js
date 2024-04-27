@@ -487,6 +487,7 @@ const year = now.getFullYear(); // return year
 const month = now.getMonth() + 1; // return month(0 - 11)
 const date = now.getDate(); // return date (1 - 31)
 const hours = now.getHours(); // return nu darn number (0 -59)
+const minutes = now.getMinutes();
 
 console.log(`${date}/${month}/${year} ${hours}:${minutes}`); // 4/1/2020 0:56
 
@@ -515,7 +516,87 @@ In JavaScript and other programming languages the key word if is to used check i
  and to execute the block code. To create an if condition, we need if keyword, 
  condition inside a parenthesis and block of code inside a curly bracket({}).
 */
-// syntax
+
+/*
+
+syntax
 if (condition) {
   //this part of code runs for truthy condition
+}
+
+*/
+
+let num = 3;
+if (num > 0) {
+  console.log(`${num} is a positive number.`);
+}
+
+let iAmHungry = true;
+
+if (iAmHungry) {
+  console.log("Get me food.");
+}
+
+//If Else
+// condition is true the first block will be executed, if not the else condition will be executed.
+
+/*
+// syntax
+if (condition) {
+  // this part of code runs for truthy condition
+} else {
+  // this part of code runs for false condition
+}
+
+*/
+let num1 = 5;
+if (num1 > 0) {
+  console.log(`${num1} is a positive number.`);
+} else {
+  console.log(`${num1} is a negative number.`);
+}
+
+num1 = -3;
+if (num1 > 0) {
+  console.log(`${num1} is a positive number`);
+} else {
+  console.log(`${num1} is a negative number`);
+}
+//  -3 is a negative number
+
+//If Else if Else
+//programming is also full of conditions. We use else if when we have multiple conditions.
+
+/* // syntax
+if (condition) {
+     // code
+} else if (condition) {
+   // code
+} else {
+    //  code
+
+}
+*/
+
+let aa = 0;
+if (aa > 0) {
+  console.log(`${aa} is a positive number`);
+} else if (aa < 0) {
+  console.log(`${aa} is a negative number`);
+} else if (a == 0) {
+  console.log(`${aa} is zero`);
+} else {
+  console.log(`${aa} is not a number`);
+}
+
+let weatherCondition = "Sunny";
+
+if (weatherCondition == "Rainy") {
+  console.log("You need an umbrella");
+} else if (weatherCondition == "Cloudy") {
+  console.log("It might be cold, you need a jacket");
+} else if (weatherCondition == "Sunny") {
+  console.log("Go out freely");
+} else {
+  console.log("No need for rain coat.");
 }
