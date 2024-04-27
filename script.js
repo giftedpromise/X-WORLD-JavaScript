@@ -949,3 +949,20 @@ let words = txt.split("  ");
 
 //Accessing array items using index
 //We access each element in an array using their index. An array index starts from 0.
+
+const fruits2 = ["banana", "orange", "mango", "lemon"];
+let firstFruit = fruits2[0]; // we are accessing the first item using its index
+
+console.log(firstFruit); // banana
+
+secondFruit = fruits2[1];
+console.log(secondFruit); // orange
+
+let lastFruit = fruits2[3];
+console.log(lastFruit); // lemon
+// Last index can be calculated as follows
+
+let lastIndex2 = fruits2.length - 1;
+lastFruit = fruits[lastIndex];
+
+console.log(lastFruit); // lemon
