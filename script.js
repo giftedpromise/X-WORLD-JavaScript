@@ -600,3 +600,136 @@ if (weatherCondition == "Rainy") {
 } else {
   console.log("No need for rain coat.");
 }
+
+/*
+Switch
+Switch is an alternative for if else if else else.
+ The switch statement starts with a switch keyword followed by a parenthesis and code block. 
+ Inside the code block we will have different cases.
+  Case block runs if the value in the switch statement parenthesis matches with the case value. 
+  The break statement is to terminate execution so the code execution does not go down after
+   the condition is satisfied. 
+  The default block runs if all the cases don't satisfy the condition.
+
+switch(caseValue){
+  case 1:
+    // code
+    break
+  case 2:
+   // code
+   break
+  case 3:
+   // code
+   break
+  default:
+   // code
+}
+
+*/
+
+let weather = "cloudy";
+switch (weather) {
+  case "Rainy":
+    console.log("You need an umbrella");
+    break;
+  case "Sunny":
+    console.log("Go out freely");
+    break;
+  case "Cloudy":
+    console.log("It might be cold, you need a jacket");
+    break;
+  default:
+    console.log(" No need for rain coat.");
+}
+let dayUserInput = prompt("What day is today?");
+if (dayUserInput) {
+  // If the user entered a value, convert it to lowercase
+  let day = dayUserInput.toLowerCase();
+
+  switch (day) {
+    case "monday":
+      console.log("Today is Monday");
+      break;
+    case "tuesday":
+      console.log("Today is Tuesday");
+      break;
+    case "wednesday":
+      console.log("Today is Wednesday");
+      break;
+    case "thursday":
+      console.log("Today is Thursday");
+      break;
+    case "friday":
+      console.log("Today is Friday");
+      break;
+    case "saturday":
+      console.log("Today is Saturday");
+      break;
+    case "sunday":
+      console.log("Today is Sunday");
+      break;
+    default:
+      console.log("Not a valid weekday");
+  }
+} else {
+  console.log("Input was null or empty");
+}
+
+let num2 = prompt("Enter number");
+switch (true) {
+  case num2 > 0:
+    console.log("Number is positive");
+    break;
+  case num2 == 0:
+    console.log("Numbers is zero");
+    break;
+  case num2 < 0:
+    console.log("Number is negative");
+    break;
+  default:
+    console.log("Entered value was not a number");
+}
+
+//Ternary Operators
+//Another way to write conditionals is using ternary operators.
+let isNotRaining = true;
+isNotRaining
+  ? console.log("No need for a rain coat.")
+  : console.log("you need for a rain coat.");
+
+//Exercise
+
+/*
+
+Get user input using prompt(“Enter your age:”). If user is 18 or older , give feedback:'You are old enough to drive' but if not 18 give another feedback stating to wait for the number of years he needs to turn 18.
+
+Enter your age: 30
+You are old enough to drive.
+
+Enter your age:15
+You are left with 3 years to drive.
+*/
+
+let age2 = prompt("Enter your age");
+if (age2 >= 18) {
+  console.log("You are old enough to drive.");
+} else {
+  let yearsLeft = 18 - age2;
+  console.log(`You are left with ${yearsLeft} to .`);
+}
+
+//Exercise 2
+
+let myAge = 18;
+let yourAge = prompt("Enter Your Age");
+
+if (yourAge > myAge) {
+  let newAge = yourAge - myAge;
+  console.log(`You are ${newAge} years older than me`);
+} else if (yourAge < myAge) {
+  let newAge = myAge - yourAge;
+
+  console.log(`I am ${newAge} years older than you`);
+} else {
+  console.log("We are the same age.");
+}
