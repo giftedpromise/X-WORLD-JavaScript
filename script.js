@@ -486,7 +486,36 @@ console.log(now.getDay());
 const year = now.getFullYear(); // return year
 const month = now.getMonth() + 1; // return month(0 - 11)
 const date = now.getDate(); // return date (1 - 31)
-const hours = now.getHours(); // return number (0 - 23)
-const minutes = now.getMinutes(); // return number (0 -59)
+const hours = now.getHours(); // return nu darn number (0 -59)
 
 console.log(`${date}/${month}/${year} ${hours}:${minutes}`); // 4/1/2020 0:56
+
+//DAY THREE
+//TOPICS: Conditionals
+
+//Conditional statements are used for make decisions based on different conditions.
+// By default , statements in JavaScript script executed sequentially from top to bottom.
+//Conditional execution: a block of one or more statements will be executed if a certain expression is true
+//Repetitive execution: a block of one or more statements will be repetitively executed as long as a certain expression is true.
+//In this section, we will cover if, else , else if statements.
+
+/*
+
+Conditions can be implementing using the following ways:
+
+if
+if else
+if else if else
+switch
+ternary operator
+
+
+If
+In JavaScript and other programming languages the key word if is to used check if a condition is true
+ and to execute the block code. To create an if condition, we need if keyword, 
+ condition inside a parenthesis and block of code inside a curly bracket({}).
+*/
+// syntax
+if (condition) {
+  //this part of code runs for truthy condition
+}
