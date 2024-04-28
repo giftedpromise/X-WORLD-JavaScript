@@ -933,7 +933,7 @@ const arr3 = [
 ]; // arr containing different data types
 console.log(arr3);
 
-let JScript = "JavaScript";
+let jScript = "JavaScript";
 const charsInJavaScript = jScript.split("");
 
 console.log(charsInJavaScript); // ["J", "a", "v", "a", "S", "c", "r", "i", "p", "t"]
@@ -1015,3 +1015,52 @@ console.log(shoppingCart[lastIndex5]); //  -> Sugar
 
 //Modifying array element
 //An array is mutable(modifiable). Once an array is created, we can modify the contents of the array elements.
+
+const numbers1 = [1, 2, 3, 4, 5];
+numbers1[0] = 10;
+numbers1[3] = 20;
+console.log(numbers1);
+
+const countries2 = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
+
+countries2[2] = "Nigeria";
+let lastOfIndex = countries2.length - 1;
+console.log(lastOfIndex);
+countries2[lastOfIndex] = "Korea";
+console.log(countries2);
+
+//Methods to manipulate array
+//There are different methods to manipulate an array.
+//These are some of the available methods to deal with arrays:Array,
+//length, concat, indexOf, slice, splice, join, toString, includes,
+//lastIndexOf, isArray, fill, push, pop, shift, unshift
+
+const arr1 = Array(); // creates an an empty array
+console.log(arr1);
+
+const eightEmptyValues = Array(8);
+console.log(eightEmptyValues); // [empty x 8]
+
+//Creating static values with fill
+//fill: Fill all the array elements with a static value
+
+const eightXvalues = Array(8).fill("X"); // it creates eight element values filled with 'X'
+console.log(eightXvalues); // ['X', 'X','X','X','X','X','X','X']
+
+const eight0values = Array(8).fill(0);
+console.log(eight0values);
+
+const four4values = Array(4).fill(4);
+console.log(four4values);
