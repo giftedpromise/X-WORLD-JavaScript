@@ -974,7 +974,7 @@ console.log(numbers3); // -> [0, 3.14, 9.81, 37, 98.6, 100]
 console.log(numbers3[0]); //  -> 0
 console.log(numbers3[5]); //  -> 100
 
-let lastIndex3 = numbers.length - 1;
+let lastIndex3 = numbers3.length - 1;
 console.log(numbers3[lastIndex]); // -> 100
 
 const webTechs1 = [
@@ -1302,3 +1302,91 @@ console.log(fullStack); // [["HTML", "CSS", "JS", "React", "Redux"], ["Node", "E
 console.log(fullStack.length); // 2
 console.log(fullStack[0]); // ["HTML", "CSS", "JS", "React", "Redux"]
 console.log(fullStack[1]); // ["Node", "Express", "MongoDB"]
+
+//EXERCISES
+const countries5 = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
+
+const webTechs6 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
+
+//Declare an empty array;
+
+let arr4 = Array();
+
+//Declare an array with more than 5 number of elements
+// Declare an array with more than 5 elements
+const figures = [10, 20, 30, 40, 50, 60, 70, 80];
+
+// Log the array to the console
+console.log(figures);
+
+//Find the length of your array
+let arrayLength = figures.length;
+
+//Get the first item, the middle item and the last item of the array
+console.log(figures[0]);
+console.log(figures[4]);
+console.log(figures.length - 1);
+
+//DAY SIX
+//TOPIC: LOOPS
+
+//A loop in JavaScript is a way to tell the computer to do something over and over again until you tell it to stop.
+
+/* for Loop:
+Imagine you want to count from 1 to 10. A for loop helps you do this easily.
+You tell the computer three things:
+Where to start (let i = 1;).
+When to stop (i <= 10;).
+How to count (i++ which means "add 1 each time").
+
+*/
+
+for (let i = 0; i <= 5; i++) {
+  console.log(i);
+}
+
+for (let i = 5; i >= 0; i--) {
+  console.log(i);
+}
+
+// 5 4 3 2 1 0
+
+for (let i = 0; i <= 5; i++) {
+  console.log(`${i} * ${i} = ${i * i}`);
+}
+
+const numbers16 = [1, 2, 3, 4, 5];
+let sum1 = 0;
+for (let i = 0; i < numbers.length; i++) {
+  sum1 = sum1 + numbers[i]; // can be shorten, sum += numbers[i]
+}
+
+console.log(sum1); // 15
+
+const countries7 = ["Finland", "Sweden", "Norway", "Denmark", "Iceland"];
+const newArr = [];
+for (let i = 0; i < countries7.length; i++) {
+  newArr.push(countries7[i].toUpperCase());
+}
+
+console.log(newArr); // ["FINLAND", "SWEDEN", "NORWAY", "DENMARK", "ICELAND"]
