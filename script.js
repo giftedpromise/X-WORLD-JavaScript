@@ -1121,3 +1121,113 @@ if (index === -1) {
 } else {
   console.log("This fruit does exist in the array");
 }
+
+//Getting last index of an element in array
+//lastIndexOf: It gives the position of the last item in the array.
+//If it exist, it returns the index else it returns -1.
+
+const numbers5 = [1, 2, 3, 4, 5, 3, 1, 2];
+
+console.log(numbers5.lastIndexOf(2)); // 7
+console.log(numbers5.lastIndexOf(0)); // -1
+console.log(numbers5.lastIndexOf(1)); //  6
+console.log(numbers5.lastIndexOf(4)); //  3
+console.log(numbers5.lastIndexOf(6)); // -1
+
+//includes:To check if an item exist in an array. If it exist it returns the true else it returns false.
+
+console.log(numbers5.includes(5));
+console.log(numbers5.includes(6));
+console.log(numbers5.includes(3));
+
+const webTechs3 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+]; // List of web technologies
+
+console.log(webTechs3.includes("Node")); // true
+console.log(webTechs3.includes("C")); // false
+
+//Checking array
+//Array.isArray:To check if the data type is an array
+
+const numbers6 = [1, 2, 3, 4, 5];
+console.log(Array.isArray(numbers)); // true
+
+const number1 = 100;
+console.log(Array.isArray(number1)); // false
+
+//Converting array to string
+//toString:Converts array to string
+
+const numb = [1, 2, 3, 4, 5];
+console.log(numb.toString());
+
+const names = ["Asabeneh", "Mathias", "Elias", "Brook"];
+console.log(names.toString()); // Asabeneh,Mathias,Elias,Brook
+
+//Joining array elements
+//join: It is used to join the elements of the array,
+//the argument we passed in the join method will be joined in the array and return as a string.
+//By default, it joins with a comma, but we can pass different string parameter which can be joined between the items.
+
+const numbers7 = [1, 2, 3, 4, 5];
+console.log(numbers7.join()); // 1,2,3,4,5
+
+const names2 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+
+console.log(names2.join()); // Asabeneh,Mathias,Elias,Brook
+console.log(names2.join("")); //AsabenehMathiasEliasBrook
+console.log(name2.join(" ")); //Asabeneh Mathias Elias Brook
+console.log(names2.join(", ")); //Asabeneh, Mathias, Elias, Brook
+console.log(names2.join(" # ")); //Asabeneh # Mathias # Elias # Brook
+
+const webTechs4 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+]; // List of web technologies
+
+console.log(webTechs4.join()); // "HTML,CSS,JavaScript,React,Redux,Node,MongoDB"
+console.log(webTechs4.join(" # ")); // "HTML # CSS # JavaScript # React # Redux # Node # MongoDB"
+
+//Splice method in array
+//Splice: It takes three parameters:Starting position, number of times to be removed and number of items to be added.
+
+const numbers8 = [1, 2, 3, 4, 5];
+numbers8.splice();
+console.log(numbers8); // -> remove all items
+
+const numbers9 = [1, 2, 3, 4, 5];
+numbers9.splice(0, 1);
+console.log(numbers9); // remove the first item
+
+const numbers10 = [1, 2, 3, 4, 5, 6];
+numbers10.splice(3, 3, 7, 8, 9);
+console.log(numbers10.splice(3, 3, 7, 8, 9)); // -> [1, 2, 3, 7, 8, 9] //it removes three item and replace three items
+
+//Adding item to an array using push
+//Push: adding item in the end. To add item to the end of an existing array we use the push method.
+
+const numbers11 = [1, 2, 3, 4, 5];
+numbers11.push(6);
+console.log(numbers11); // -> [1,2,3,4,5,6]
+
+numbers11.pop(); // -> remove one item from the end
+console.log(numbers11); // -> [1,2,3,4,5]
+
+let fruits4 = ["banana", "orange", "mango", "lemon"];
+fruits4.push("apple");
+console.log(fruits4); // ['banana', 'orange', 'mango', 'lemon', 'apple']
+
+fruits4.push("lime");
+console.log(fruits4); // ['banana', 'orange', 'mango', 'lemon', 'apple', 'lime']
