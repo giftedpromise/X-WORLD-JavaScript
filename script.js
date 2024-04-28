@@ -1064,3 +1064,60 @@ console.log(eight0values);
 
 const four4values = Array(4).fill(4);
 console.log(four4values);
+
+//Concatenating array using concat
+//concat:To concatenate two arrays.
+
+const firstList = [1, 2, 3];
+const secondList = [4, 5, 6];
+const thirdList = firstList.concat(secondList);
+
+console.log(thirdList);
+
+const fruits1 = ["banana", "orange", "mango", "lemon"]; // array of fruits
+const vegetables1 = ["Tomato", "Potato", "Cabbage", "Onion", "Carrot"]; // array of vegetables
+const fruitsAndVegetables = fruits1.concat(vegetables1);
+
+console.log(fruitsAndVegetables);
+
+//Getting array length
+//Length:To know the size of the array
+
+console.log(fruitsAndVegetables.length);
+
+//Getting index an element in arr array
+//indexOf:To check if an item exist in an array.
+//If it exists it returns the index else it returns -1.
+
+const numbers4 = [1, 2, 3, 4, 5];
+
+console.log(numbers4.indexOf(2));
+console.log(numbers4.indexOf(5)); // -> 4
+console.log(numbers4.indexOf(0)); // -> -1
+console.log(numbers4.indexOf(1)); // -> 0
+console.log(numbers4.indexOf(6)); // -> -1
+
+//Check an element if it exist in an array.
+
+//Check items in a list
+
+const fruits3 = ["banana", "orange", "mango", "lemon"];
+let index = fruits3.indexOf("banana"); // 0
+
+if (index === -1) {
+  console.log("Fruit does not exist in the array");
+} else {
+  console.log("This fruit does exist in the array");
+}
+
+index === -1
+  ? console.log("Fruit does not exist in the array")
+  : console.log("This fruit does exist in the array");
+
+let indexOfAvocado = fruits3.indexOf("avocado");
+
+if (index === -1) {
+  console.log("Fruit does not exist in the array");
+} else {
+  console.log("This fruit does exist in the array");
+}
