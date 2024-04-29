@@ -1527,3 +1527,82 @@ for (let i = 0; i <= 10; i++) {
 
   console.log(`${i}  ${iSquared} ${iCubed}`);
 }
+
+//DAY SIX
+//TOPIC: FUNCTIONS
+
+/*
+
+A function is a reusable block of code or programming statements designed to perform a certain task.
+ A function is declared by a function key word followed by a name, followed by parentheses (). 
+ A parentheses can take a parameter.
+  If a function take a parameter it will be called with argument. 
+  A function can also take a default parameter.
+   To store a data to a function, a function has to return certain data types. 
+   To get the value we call or invoke a function. Function makes code:
+
+clean and easy to read
+reusable
+easy to test
+
+A function can be declared or created in couple of ways:
+
+Declaration function
+Expression function
+Anonymous function
+Arrow function
+
+*/
+
+//Function without a parameter and return
+//Function can be declared without a parameter.
+
+function square() {
+  let num = 2;
+  let sq = num * num;
+  console.log(sq);
+}
+
+square();
+
+function addTwoNumbers() {
+  let numOne = 10;
+  let numTwo = 20;
+  let sum = numOne + numTwo;
+
+  console.log(sum);
+}
+
+addTwoNumbers();
+
+function printFullName() {
+  let firstName = "Asabeneh";
+  let lastName = "Yetayeh";
+  let space = " ";
+  let fullName = firstName + space + lastName;
+  console.log(fullName);
+}
+
+printFullName(); // calling a function
+
+//Function returning value
+//Function can also return values, if a function does not return values the value of the function is undefined.
+
+function printFullName() {
+  let firstName = "Asabeneh";
+  let lastName = "Yetayeh";
+  let space = " ";
+  let fullName = firstName + space + lastName;
+  return fullName;
+}
+
+printFullName(); // calling a function
+
+function addTwoNumbers() {
+  let numOne = 2;
+  let numTwo = 3;
+  let total = numOne + numTwo;
+  return total;
+}
+
+console.log(addTwoNumbers());
