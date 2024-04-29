@@ -1390,3 +1390,58 @@ for (let i = 0; i < countries7.length; i++) {
 }
 
 console.log(newArr); // ["FINLAND", "SWEDEN", "NORWAY", "DENMARK", "ICELAND"]
+
+//while Loop:
+//This loop repeats an action as long as a certain condition is true.
+var i = 0;
+while (i < 10) {
+  console.log(i);
+  i++;
+}
+
+//do...while Loop:
+//This loop is similar to the while loop, but it always runs at least once, even if the condition is false at the start.
+
+let i = 0;
+do {
+  console.log(i);
+  i++;
+} while (i <= 10);
+
+//For of loop
+//We use for of loop for arrays.
+//It is very hand way to iterate through an array if we are not interested in the index of each element in the array.
+
+const numbers17 = [1, 2, 3, 4, 5];
+
+for (const num of numbers17) {
+  console.log(num);
+}
+
+for (const num of numbers17) {
+  console.log(num * num);
+}
+
+const webTechs7 = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Redux",
+  "Node",
+  "MongoDB",
+];
+
+for (const tech of webTechs7) {
+  console.log(tech.toUpperCase());
+}
+
+const countries8 = ["Finland", "Sweden", "Norway", "Denmark", "Iceland"];
+const newAr1 = [];
+
+for (const country of countries8) {
+  newAr1.push(country.toUpperCase());
+}
+
+//break
+//Break is used to interrupt a loop.
