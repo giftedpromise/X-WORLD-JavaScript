@@ -1606,3 +1606,21 @@ function addTwoNumbers() {
 }
 
 console.log(addTwoNumbers());
+
+//Function with a parameter
+//In a function we can pass different data types(number, string, boolean, object, function) as a parameter.
+
+function square(num) {
+  return num * num;
+}
+
+console.log(square(10));
+
+//Function with two parameters
+
+function sumTwoNumbers(numOne, numTwo) {
+  let sum = numOne + numTwo;
+  console.log(sum);
+}
+sumTwoNumbers(10, 20); // calling functions
+// If a function doesn't return it doesn't store data, so it should return
