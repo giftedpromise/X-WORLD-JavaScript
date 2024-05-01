@@ -1752,3 +1752,88 @@ function generateFullName(firstName = "Asabeneh", lastName = "Yetayeh") {
 
 console.log(generateFullName());
 console.log(generateFullName("David", "Smith"));
+
+const greeting = (name = "Peter") => {
+  let message = name + ", welcome to 30 Days Of JavaScript!";
+  return message;
+};
+
+console.log(greeting());
+console.log(greeting("Asabeneh"));
+
+//Exercises: Level 1
+//Declare a function fullName and it print out your full name.
+//Declare a function fullName and now it takes firstName, lastName as a parameter and it returns your full - name.
+
+function getFullName(firstName, lastName) {
+  return `My name is ${firstName} ${lastName}`;
+}
+
+console.log(getFullName("Promise", "Nwankwo"));
+
+//DAY SEVEN
+//TOPIC: SCOPE AND OBJECT
+
+//Variables scopes can be:
+
+//Global
+//Local
+//Variable can be declared globally or locally scope.
+
+//scope.js
+a = "JavaScript"; // declaring a variable without let or const make it available in window object and this found anywhere
+b = 10; // this is a global scope variable and found in the window object
+function letsLearnScope() {
+  console.log(a, b);
+  if (true) {
+    console.log(a, b);
+  }
+}
+console.log(a, b); // accessible
+
+//Local scope
+//A variable declared as local can be accessed only in certain block code.
+
+//Block Scope
+//Function Scope
+
+//scope.js
+let A = "JavaScript"; // is a global scope it will be found anywhere in this file
+let B = 10; // is a global scope it will be found anywhere in this file
+// Function scope
+function letsLearnScope() {
+  console.log(A, B); // JavaScript 10, accessible
+  let value = false;
+  // block scope
+  if (true) {
+    // we can access from the function and outside the function but
+    // variables declared inside the if will not be accessed outside the if block
+    let A = "Python";
+    let B = 20;
+    let c = 30;
+    let d = 40;
+    value = !value;
+    console.log(A, B, c, value); // Python 20 30 true
+  }
+  // we can not access c because c's scope is only the if block
+  console.log(A, B, value); // JavaScript 10 true
+}
+letsLearnScope();
+console.log(A, B); // JavaScript 10, accessible
+
+function exampleFunction() {
+  var functionScopedVar = "I am available throughout the function";
+
+  if (true) {
+    let blockScopedLet = "I am only available in this block";
+    const blockScopedConst = "I am only available in this block";
+    console.log(functionScopedVar); // This works
+    console.log(blockScopedLet); // This works
+    console.log(blockScopedConst); // This works
+  }
+
+  console.log(functionScopedVar); // This works
+  // The following lines would cause errors because `blockScopedLet` and `blockScopedConst` are not available outside the block:
+  // console.log(blockScopedLet);
+  // console.log(blockScopedConst);
+}
