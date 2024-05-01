@@ -1656,7 +1656,7 @@ console.log(sumAllNums(10, 20, 13, 40, 10)); // 93
 console.log(sumAllNums(15, 20, 30, 25, 10, 33, 40)); // 173
 
 // function declaration
-const sumAllNums = (...args) => {
+const sumAllNums1 = (...args) => {
   let sum = 0;
   for (const element of args) {
     sum += element;
@@ -1664,9 +1664,9 @@ const sumAllNums = (...args) => {
   return sum;
 };
 
-console.log(sumAllNums(1, 2, 3, 4)); // 10
-console.log(sumAllNums(10, 20, 13, 40, 10)); // 93
-console.log(sumAllNums(15, 20, 30, 25, 10, 33, 40)); // 173
+console.log(sumAllNums1(1, 2, 3, 4)); // 10
+console.log(sumAllNums1(10, 20, 13, 40, 10)); // 93
+console.log(sumAllNums1(15, 20, 30, 25, 10, 33, 40)); // 173
 
 //Anonymous function
 const anonymousFun = function () {
@@ -1676,5 +1676,49 @@ const anonymousFun = function () {
 };
 
 //Expression Function
-//Expression functions are anonymous functions. After we create a function without a name and we assign it to a variable.
+//Expression functions are anonymous functions.
+//After we create a function without a name and we assign it to a variable.
 //To return a value from the function we should call the variable.
+
+const square1 = function (n) {
+  return n * n;
+};
+
+console.log(square1(2));
+
+//Self Invoking Functions
+//Self invoking functions are anonymous functions which do not need to be called to return a value.
+(function (n) {
+  console.log(n * n);
+})(10);
+
+let squaredNum = (function (n) {
+  return n * n;
+})(2);
+console.log(squaredNum);
+
+//Arrow Function
+//Arrow function is an alternative to write a function.
+//Arrow function uses arrow instead of the keyword function to declare a function.
+
+let sentence = () => {
+  console.log("She is a girl");
+};
+sentence();
+
+let sqaureNum = (n) => {
+  return n * n;
+};
+
+console.log(sqaureNum(6));
+
+const changeToUpperCase = (arr) => {
+  const newArr = [];
+  for (const element of arr) {
+    newArr.push(changeToUpperCase());
+  }
+  return newArr;
+};
+
+const countries1 = ["Finland", "Sweden", "Norway", "Denmark", "Iceland"];
+console.log(changeToUpperCase(countries1));
