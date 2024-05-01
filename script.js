@@ -1654,3 +1654,27 @@ function sumAllNums() {
 console.log(sumAllNums(1, 2, 3, 4)); // 10
 console.log(sumAllNums(10, 20, 13, 40, 10)); // 93
 console.log(sumAllNums(15, 20, 30, 25, 10, 33, 40)); // 173
+
+// function declaration
+const sumAllNums = (...args) => {
+  let sum = 0;
+  for (const element of args) {
+    sum += element;
+  }
+  return sum;
+};
+
+console.log(sumAllNums(1, 2, 3, 4)); // 10
+console.log(sumAllNums(10, 20, 13, 40, 10)); // 93
+console.log(sumAllNums(15, 20, 30, 25, 10, 33, 40)); // 173
+
+//Anonymous function
+const anonymousFun = function () {
+  console.log(
+    "I am an anonymous function and my value is stored in anonymousFun"
+  );
+};
+
+//Expression Function
+//Expression functions are anonymous functions. After we create a function without a name and we assign it to a variable.
+//To return a value from the function we should call the variable.
