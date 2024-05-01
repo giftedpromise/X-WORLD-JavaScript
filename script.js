@@ -1715,10 +1715,40 @@ console.log(sqaureNum(6));
 const changeToUpperCase = (arr) => {
   const newArr = [];
   for (const element of arr) {
-    newArr.push(changeToUpperCase());
+    newArr.push(element.toUpperCase());
   }
   return newArr;
 };
 
 const countries1 = ["Finland", "Sweden", "Norway", "Denmark", "Iceland"];
 console.log(changeToUpperCase(countries1));
+
+const printFullName1 = (firstName, lastName) => {
+  return `${firstName} ${lastName}`;
+};
+
+console.log(printFullName1("Promise", "Nwankwo"));
+
+const printFullName3 = (firstName, lastName) => `${firstName} ${lastName}`;
+console.log(printFullName1("Promise", "Nwankwo"));
+
+//Function with default parameters
+//Sometimes we pass default values to parameters, when we invoke the function
+//if we do not pass an argument the default value will be used.
+
+function greetings(name = "Peter") {
+  let message = `${name}, welcome to 30 Days Of JavaScript!`;
+  return message;
+}
+
+console.log(greetings());
+console.log(greetings("Asabeneh"));
+
+function generateFullName(firstName = "Asabeneh", lastName = "Yetayeh") {
+  let space = " ";
+  let fullName = firstName + space + lastName;
+  return fullName;
+}
+
+console.log(generateFullName());
+console.log(generateFullName("David", "Smith"));
