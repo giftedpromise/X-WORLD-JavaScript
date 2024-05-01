@@ -1539,6 +1539,15 @@ A function is a reusable block of code or programming statements designed to per
   If a function take a parameter it will be called with argument. 
   A function can also take a default parameter.
    To store a data to a function, a function has to return certain data types. 
+   Declare a function
+To declare a function, you use the function keyword, followed by the function name, 
+a list of parameters, and the function body as follows:
+Calling a function
+To use a function, you need to call it. Calling a function is also known as invoking a function.
+ To call a function, you use its name followed by arguments enclosing in parentheses like this.
+ When calling a function, JavaScript executes the code inside the function body. 
+ Returning a value
+Every function in JavaScript implicitly returns undefined unless you explicitly specify a return value.
    To get the value we call or invoke a function. Function makes code:
 
 clean and easy to read
@@ -1761,6 +1770,19 @@ const greeting = (name = "Peter") => {
 console.log(greeting());
 console.log(greeting("Asabeneh"));
 
+//Function hoisting
+//In JavaScript, you can use a function before declaring it. For example:
+showMe(); // a hoisting example
+
+function showMe() {
+  console.log("an hoisting example");
+}
+
+//This feature is called hoisting.
+
+//Function hoisting is a mechanism which the JavaScript engine physically moves
+// function declarations to the top of the code before executing them.
+
 //Exercises: Level 1
 //Declare a function fullName and it print out your full name.
 //Declare a function fullName and now it takes firstName, lastName as a parameter and it returns your full - name.
@@ -1838,20 +1860,166 @@ function exampleFunction() {
   // console.log(blockScopedConst);
 }
 
-//scope.js
-function letsLearnScope() {
-  var gravity = 9.81;
-  console.log(gravity);
-}
-// console.log(gravity), Uncaught ReferenceError: gravity is not defined
+//Object
+//Everything can be an object and objects do have properties and properties have values,
+//so an object is a key value pair.
+//Creating an empty object
+//An empty object
 
-if (true) {
-  var gravity = 9.81;
-  console.log(gravity); // 9.81
-}
-console.log(gravity); // 9.81
+const person = {};
 
-for (var i = 0; i < 3; i++) {
-  console.log(i); // 0, 1, 2
-}
-console.log(i); // 3
+//Creating an objecting with values
+const rectangle = {
+  length: 20,
+  width: 20,
+};
+console.log(rectangle); // {length: 20, width: 20}
+
+const person1 = {
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+  age: 250,
+  country: "Finland",
+  city: "Helsinki",
+  skills: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
+  ],
+  isMarried: true,
+};
+console.log(person1);
+
+//Getting values from an object
+//We can access values of object using two methods:
+
+//using . followed by key name if the key-name is a one word
+//using square bracket and a quote
+
+const person2 = {
+  firstName: "Asabeneh",
+  lastName: "Yetayeh",
+  age: 250,
+  country: "Finland",
+  city: "Helsinki",
+  skills: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "React",
+    "Node",
+    "MongoDB",
+    "Python",
+    "D3.js",
+  ],
+  getFullName: function () {
+    return `${this.firstName}${this.lastName}`;
+  },
+  "phone number": "+3584545454545",
+};
+
+// accessing values using .
+console.log(person2.firstName);
+console.log(person2.lastName);
+console.log(person2.age);
+console.log(person2.location); // undefined
+
+// value can be accessed using square bracket and key name
+console.log(person2["firstName"]);
+console.log(person2["lastName"]);
+console.log(person2["age"]);
+console.log(person2["age"]);
+console.log(person2["location"]); // undefined
+
+// for instance to access the phone number we only use the square bracket method
+console.log(person2["phone number"]);
+
+//Object Methods
+//There are different methods to manipulate an object. Let us see some of the available methods.
+
+//Object.assign: To copy an object without modifying the original object
+
+const person3 = {
+  firstName: "Asabeneh",
+  age: 250,
+  country: "Finland",
+  city: "Helsinki",
+  skills: ["HTML", "CSS", "JS"],
+  title: "teacher",
+  address: {
+    street: "Heitamienkatu 16",
+    pobox: 2002,
+    city: "Helsinki",
+  },
+  getPersonInfo: function () {
+    return `I am ${this.firstName} and I live in ${this.city}, ${this.country}. I am ${this.age}.`;
+  },
+};
+
+//Object methods: Object.assign, Object.keys, Object.values, Object.entries
+//hasOwnProperty
+
+const copyPerson = Object.assign({}, person3);
+console.log(copyPerson);
+
+//Getting object keys using Object.keys()
+//Object.keys: To get the keys or properties of an object as an array
+const keys = Object.keys(copyPerson);
+console.log(keys); //['firstName', 'age', 'country','city', 'skills','title', 'address', 'getPersonInfo']
+const address = Object.keys(copyPerson.address);
+console.log(address); //['street', 'pobox', 'city']
+
+//Getting object values using Object.values()
+//Object.values:To get values of an object as an array
+
+const values = Object.values(copyPerson);
+console.log(values);
+
+//Getting object keys and values using Object.entries()
+//Object.entries:To get the keys and values in an array
+
+const entries = Object.entries(copyPerson);
+console.log(entries);
+
+/* Exercises: Level 1
+Create an empty object called dog
+Print the the dog object on the console
+Add name, legs, color, age and bark properties for the dog object. The bark property is a method which return woof woof
+Get name, legs, color, age and bark value from the dog object
+Set new properties the dog object: breed, getDogInfo
+*/
+
+let dog = {};
+console.log(dog);
+
+// Add properties to the dog object
+dog.name = "Buddy";
+dog.legs = 4;
+dog.color = "brown";
+dog.age = 5;
+
+dog.bark = function () {
+  return "woof woof";
+};
+
+// Print the values of the properties and the result of the bark method
+console.log(`Name: ${dog.name}`);
+console.log(`Legs: ${dog.legs}`);
+console.log(`Color: ${dog.color}`);
+console.log(`Age: ${dog.age}`);
+console.log(`Bark: ${dog.bark()}`);
+
+// Set new properties for the dog object
+dog.breed = "Golden Retriever";
+dog.getDogInfo = function () {
+  return `The dog's name is ${this.name}, a ${this.age}-year-old ${
+    this.color
+  } ${this.breed}. It has ${
+    this.legs
+  } legs. When it barks, it goes ${this.bark()}.`;
+};
