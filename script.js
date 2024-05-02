@@ -2176,3 +2176,23 @@ console.log(squaredNumber);
 const names7 = ["Asabeneh", "Mathias", "Elias", "Brook"];
 let nameToUpperCase = names7.map((item) => item.toUpperCase());
 console.log(nameToUpperCase);
+
+const countries9 = [
+  "Albania",
+  "Bolivia",
+  "Canada",
+  "Denmark",
+  "Ethiopia",
+  "Finland",
+  "Germany",
+  "Hungary",
+  "Ireland",
+  "Japan",
+  "Kenya",
+];
+
+let countryToUpperCase = countries9.map((country) => {
+  return country.toUpperCase();
+});
+
+console.log(countryToUpperCase);
