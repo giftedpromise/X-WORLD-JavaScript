@@ -2120,3 +2120,59 @@ forEach: Iterate an array elements. We use forEach only with arrays.
 It takes a callback function with elements, index parameter and array itself. 
 The index and the array optional.
 */
+
+arr.forEach(function (element, index, arr) {
+  console.log(index, element, arr);
+});
+// The above code can be written using arrow function
+arr.forEach((element, index, arr) => {
+  console.log(index, element, arr);
+});
+// The above code can be written using arrow function and explicit return
+arr.forEach((element, index, arr) => console.log(index, element, arr));
+
+let sum4 = 0;
+const number19 = [1, 2, 3, 4, 5];
+number19.forEach((num) => console.log(num));
+console.log(sum);
+
+const fruits5 = ["apple", "banana", "cherry"];
+fruits.forEach(function (fruit) {
+  console.log(fruit);
+});
+
+let xWorldCoders = [
+  "Faud",
+  "Maaz",
+  "Malk",
+  "Al-Mustapha",
+  "Promise",
+  "Aminco",
+  "Kingsley",
+];
+
+xWorldCoders.forEach(function (xWorldCoder) {
+  console.log(xWorldCoder + " " + "Good Afternoon");
+});
+
+//more example
+let sum7 = 0;
+const numbers20 = [1, 2, 3, 4, 5];
+
+numbers20.forEach((num) => console.log(num));
+
+//more example
+const countries6 = ["Finland", "Denmark", "Sweden", "Norway", "Iceland"];
+countries6.forEach((element) => console.log(element.toUpperCase()));
+
+//map
+//map: Iterate an array elements and modify the array elements.
+// It takes a callback function with elements, index , array parameter and return a new array.
+
+const numbers21 = [1, 2, 3, 4, 5];
+let squaredNumber = numbers21.map((num) => num * num);
+console.log(squaredNumber);
+
+const names7 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+let nameToUpperCase = names7.map((item) => item.toUpperCase());
+console.log(nameToUpperCase);
