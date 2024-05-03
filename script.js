@@ -2196,3 +2196,61 @@ let countryToUpperCase = countries9.map((country) => {
 });
 
 console.log(countryToUpperCase);
+
+const countriesFirstThreeLetters = countries9.map((country) =>
+  country.toUpperCase().slice(0, 3)
+);
+
+//filter
+//Filter: Filter out items which full fill filtering conditions and return a new array.
+//Filter countries containing land
+const countriesContainingLand = countries9.filter((country) =>
+  country.includes("land")
+);
+console.log(countriesContainingLand);
+
+const countriesEndsByia = countries9.filter((country) =>
+  country.endsWith("ia")
+);
+console.log(countriesEndsByia);
+
+const countriesHaveFiveLetters = countries9.filter(
+  (country) => country.length === 5
+);
+console.log(countriesHaveFiveLetters);
+
+const scores = [
+  { name: "Asabeneh", score: 95 },
+  { name: "Lidiya", score: 98 },
+  { name: "Mathias", score: 80 },
+  { name: "Elias", score: 50 },
+  { name: "Martha", score: 85 },
+  { name: "John", score: 100 },
+];
+
+let scoresGreaterThanEighty = scores.filter((score) => score.score > 80);
+console.log(scoresGreaterThanEighty);
+
+//reduce
+//reduce: Reduce takes a callback function.
+//The call back function takes accumulator, current,
+//and optional initial value as a parameter and returns a single value.
+// It is a good practice to define an initial value for the accumulator value.
+
+const words1 = [
+  "This",
+  "is",
+  "an",
+  "example",
+  "of",
+  "using",
+  "reduce",
+  "with",
+  "strings",
+];
+
+const sentence1 = words1.reduce(function (accumulator, currentValue) {
+  return accumulator + " " + currentValue;
+}, " ");
+
+console.log("Sentence:", sentence1);
