@@ -2322,3 +2322,14 @@ numbersSort.sort(function (a, b) {
   return b - a;
 });
 console.log(numbersSort); //[100, 37, 9.81, 3.14]
+
+//DAY 10
+//TOPIC COVERED: SET AND MAPS
+/*
+In JavaScript, a Set is a collection of unique values. 
+Set is a collection of elements. Set can only contains unique elements.
+ It's a data structure similar to an array, 
+ but it doesn't allow duplicate values, and the values are stored in insertion order.
+ */
+const mySet = new Set();
+console.log(mySet);
