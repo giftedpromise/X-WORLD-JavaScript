@@ -2260,3 +2260,7 @@ console.log("Sentence:", sentence1);
 const ages = [24, 22, 25, 32, 35, 18];
 const ageLessThanTwenty = ages.find((age) => age < 20);
 console.log(ageLessThanTwenty);
+
+const names5 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+const nameLengthSeven = names5.find((name) => name.length > 7);
+console.log(nameLengthSeven);
