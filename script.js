@@ -2264,3 +2264,38 @@ console.log(ageLessThanTwenty);
 const names5 = ["Asabeneh", "Mathias", "Elias", "Brook"];
 const nameLengthSeven = names5.find((name) => name.length > 7);
 console.log(nameLengthSeven);
+
+//findIndex
+//findIndex: Return the position of the first element which satisfies the condition
+const names8 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+const ages1 = [24, 22, 25, 32, 35, 18];
+
+const result2 = names8.findIndex((name) => name.length > 7);
+console.log(result2); // 0
+
+const ageLess = ages1.findIndex((age) => age < 20);
+console.log(ageLess); // 5
+
+//some
+//some: Check if some of the elements are similar in one aspect. It returns boolean
+const names9 = ["Asabeneh", "Mathias", "Elias", "Brook"];
+const bools = [true, true, true, true];
+
+const areSomeTrue = bools.some((b) => b === true);
+
+console.log(areSomeTrue); //true
+
+const areAllStr = names9.some((name) => typeof name === "number"); // Are all strings ?
+console.log(areAllStr); // false
+
+/* sort
+sort: The sort methods arranges the array elements either ascending or descending order. 
+By default, the sort() method sorts values as strings.
+This works well for string array items but not for numbers.
+If number values are sorted as strings and it give us wrong result.
+
+*/
+
+const products = ["Milk", "Coffee", "Sugar", "Honey", "Apple", "Carrot"];
+console.log(products.sort()); // ['Apple', 'Carrot', 'Coffee', 'Honey', 'Milk', 'Sugar']
+//Now the original products array  is also sorted
