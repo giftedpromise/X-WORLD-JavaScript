@@ -2254,3 +2254,9 @@ const sentence1 = words1.reduce(function (accumulator, currentValue) {
 }, " ");
 
 console.log("Sentence:", sentence1);
+
+//find
+//find: Return the first element which satisfies the condition.
+const ages = [24, 22, 25, 32, 35, 18];
+const ageLessThanTwenty = ages.find((age) => age < 20);
+console.log(ageLessThanTwenty);
