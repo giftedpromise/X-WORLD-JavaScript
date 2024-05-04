@@ -2331,5 +2331,46 @@ Set is a collection of elements. Set can only contains unique elements.
  It's a data structure similar to an array, 
  but it doesn't allow duplicate values, and the values are stored in insertion order.
  */
+
+//Creating an empty set
+const companies1 = new Set();
+console.log(companies1);
+
 const mySet = new Set();
 console.log(mySet);
+
+//Creating set from array
+const languages = [
+  "English",
+  "Finnish",
+  "English",
+  "French",
+  "Spanish",
+  "English",
+  "French",
+];
+
+const setOfLanguages = new Set(languages);
+console.log(setOfLanguages);
+
+for (const language of setOfLanguages) {
+  console.log(language);
+}
+
+//Adding an element to a set
+
+companies1.add("Amazon");
+companies1.add("Google"); // add element to the set
+companies1.add("Facebook");
+companies1.add("Amazon");
+companies1.add("Oracle");
+companies1.add("Microsoft");
+console.log(companies1.size); // 5 elements in the set
+console.log(companies1);
+//We can also use loop to add element to a set.
+
+const companies2 = ["Google", "Facebook", "Amazon", "Oracle", "Microsoft"];
+setOfCompanies = new Set();
+for (const company of companies2) {
+  setOfCompanies.add(company);
+}
