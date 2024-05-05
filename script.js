@@ -2423,11 +2423,11 @@ for (const [key, value] of map) {
 }
 
 //DAY 11
-//TOPIC COVERED: Destructuring and Spread
+//TOPIC COVERED: Destructuring, Rest and Spread
 //Destructuring is a way to unpack arrays, and objects and assigning to a distinct variable.
 //In JavaScript, destructuring is a way to extract values from arrays or
 // objects and assign them to variables in a single line.
-const [variable1, variable2, ...rest] = array;
+//const [variable1, variable2, ...rest] = array;
 
 //Example
 const colors = ["red", "green", "blue"];
@@ -2439,7 +2439,7 @@ console.log(color2); // Output: 'green'
 console.log(color3); // Output: 'blue'
 
 //Destructuring Objects:
-const { key1: variable1A, key2: variable2B, ...rest1 } = object;
+//const { key1: variable1A, key2: variable2B, ...rest1 } = object;
 
 //Example
 const person8 = {
@@ -2493,8 +2493,8 @@ let [
 
 //We can not assign variable to all the elements in the array.
 //We can destructure few of the first and we can get the remaining as array using spread operator(...).
-const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let [num11, num22, num33, ...rest2] = nums;
+const nums1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let [num11, num22, num33, ...rest2] = nums1;
 
 console.log(num11, num22, num33);
 console.log(rest2);
@@ -2583,3 +2583,83 @@ const todoList = [
 for (const { task, time, completed } of todoList) {
   console.log(task, time, completed);
 }
+
+//Spread or Rest Operator
+
+/* Spread Operator (...):
+The spread operator is used to expand an iterable (such as an array, string, or object) into its individual elements. 
+It allows you to take an array or object and spread its elements or
+ properties into another array or object, respectively.
+
+ */
+const numbers23 = [1, 2, 3];
+const newNumber = [...numbers23, 4, 5, 6, 7];
+console.log(newNumber);
+
+//In Objects:
+//Spreads the properties of an object into a new object:
+
+const person13 = { name: "John", age: 30 };
+const newPerson = { ...person13, country: "USA" };
+console.log(newPerson);
+
+function sum5(a, b, c) {
+  return a + b + c;
+}
+const nums6 = [1, 2, 3];
+console.log(sum5(...nums6));
+
+/*Rest Operator (...):
+The rest operator is used to gather the remaining elements in an array or 
+properties in an object into a new array or object. 
+It allows you to collect multiple arguments or elements into a single variable.
+
+Usage:
+
+*/
+
+function sum6(a, b, ...rest) {
+  console.log(a); // Output: first argument
+  console.log(b); // Output: second argument
+  console.log(rest); // Output: array of remaining arguments
+}
+sum6(1, 2, 3, 4, 5); // Output: 1, 2, [3, 4, 5]
+
+//In Destructuring:
+//Collects remaining elements in an array or properties in an object into a new array or object:
+//javascript
+
+const numbers24 = [1, 2, 3, 4, 5];
+const [firstNumb, secondNumb, ...rest] = numbers24;
+console.log(firstNumb); // Output: 1
+console.log(secondNumb); // Output: 2
+console.log(rest); // Output: [3, 4, 5]
+
+const countries11 = [
+  "Germany",
+  "France",
+  "Belgium",
+  "Finland",
+  "Sweden",
+  "Norway",
+  "Denmark",
+  "Iceland",
+];
+
+let [gem, fra, , ...nordicCountries] = countries11;
+
+console.log(gem);
+console.log(fra);
+console.log(nordicCountries);
+
+const evens = [0, 2, 4, 6, 8, 10];
+const evenNumbers = [...evens];
+
+const odds = [1, 3, 5, 7, 9];
+const oddNumbers = [...odds];
+
+const wholeNumbers = [...evens, ...odds];
+
+console.log(evenNumbers);
+console.log(oddNumbers);
+console.log(wholeNumbers);
