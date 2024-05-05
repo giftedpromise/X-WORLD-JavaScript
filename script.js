@@ -2453,3 +2453,17 @@ const { name16, age16, country16 } = person8;
 console.log(name16); // Output: 'Alice'
 console.log(age16); // Output: 25
 console.log(country16); // Output: 'USA'
+
+const scientificConstants = [2.72, 3.14, 9.81, 37, 100];
+let [e, pi, gravity2, bodyTemp1, boilingTemp] = scientificConstants;
+
+console.log(e, pi, gravity2, bodyTemp1, boilingTemp);
+
+const fullStack1 = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+];
+
+const [frontend, backend] = fullStack1;
+console.log(frontEnd);
+console.log(backEnd);
