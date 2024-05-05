@@ -2467,3 +2467,54 @@ const fullStack1 = [
 const [frontend, backend] = fullStack1;
 console.log(frontEnd);
 console.log(backEnd);
+
+//If we like to skip on of the values in the array we use additional comma.
+// The comma helps to omit the value at that specific index
+const numbers22 = [1, 2, 3];
+let [numOne1, , numThree] = numbers22; //2 is omitted
+
+console.log(numOne1, numThree);
+
+const names10 = ["Asabeneh", "Brook", "David", "John"];
+let [, secondPerson, , fourthPerson] = names10; // first and third person is omitted
+
+console.log(secondPerson, fourthPerson);
+
+//We can use default value in case the value of array for that index is undefined:
+
+const names11 = [undefined, "Brook", "David"];
+
+let [
+  firstName5 = "Asabeneh",
+  secondPerson5,
+  thirdPerson,
+  fourthPerson5 = "John",
+] = names11;
+
+//We can not assign variable to all the elements in the array.
+//We can destructure few of the first and we can get the remaining as array using spread operator(...).
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let [num11, num22, num33, ...rest2] = nums;
+
+console.log(num11, num22, num33);
+console.log(rest2);
+
+//Destructuring during iteration
+const countries10 = [
+  ["Finland", "Helsinki"],
+  ["Sweden", "Stockholm"],
+  ["Norway", "Oslo"],
+];
+
+for (const [country, city] of countries10) {
+  console.log(country, city);
+}
+
+const fullStack3 = [
+  ["HTML", "CSS", "JS", "React"],
+  ["Node", "Express", "MongoDB"],
+];
+
+for (const [first, second, third] of fullStack3) {
+  console.log(firrst, second, third);
+}
