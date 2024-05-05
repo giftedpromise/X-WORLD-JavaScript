@@ -2374,3 +2374,82 @@ setOfCompanies = new Set();
 for (const company of companies2) {
   setOfCompanies.add(company);
 }
+
+//Deleting an element a set
+//We can delete an element from a set using a delete method.
+
+console.log(companies1.delete("Google"));
+console.log(companies1.size); // 4 elements left in the set
+
+//Checking an element in the set
+//The has method can help to know if a certain element exists in a set.
+console.log(companies1.has("Amazon"));
+console.log(companies1.has("Apple")); // false
+
+//A Map in JavaScript is a data structure that allows you to store key-value pairs, similar to an object.
+// However, Map provides additional features such as preserving the order of entries
+//and allowing keys of any data type (including objects, arrays, and functions).
+
+const map = new Map();
+
+//Adding Key-Value Pairs:
+//Use the set() method to add a key-value pair to the Map
+map.set("key1", "value1");
+map.set("key2", "value2");
+
+//Retrieving Values:
+//Use the get() method to retrieve a value based on its key
+const value = map.get("key1");
+console.log(value); // Output: 'value1'
+
+//Checking for Keys:
+//Use the has() method to check if a key exists in the Map.
+console.log(map.has("key2"));
+console.log(map.has("key3")); // Output: false
+
+//Removing Key-Value Pairs:
+//Use the delete() method to remove a key-value pair from the Map:
+map.delete("key1");
+console.log(map.has("key1")); // Output: false
+
+//Getting the Size:
+//Use the size property to get the number of entries in the Map
+console.log(map.size); // Output: 1 (after removing 'key1')
+
+//Iterating Over a Map:
+//Use a for...of loop to iterate over the key-value pairs in the Map
+for (const [key, value] of map) {
+  console.log(`${key}: ${value}`);
+}
+
+//DAY 11
+//TOPIC COVERED: Destructuring and Spread
+//Destructuring is a way to unpack arrays, and objects and assigning to a distinct variable.
+//In JavaScript, destructuring is a way to extract values from arrays or
+// objects and assign them to variables in a single line.
+const [variable1, variable2, ...rest] = array;
+
+//Example
+const colors = ["red", "green", "blue"];
+
+const [color1, color2, color3] = colors;
+
+console.log(color1); // Output: 'red'
+console.log(color2); // Output: 'green'
+console.log(color3); // Output: 'blue'
+
+//Destructuring Objects:
+const { key1: variable1A, key2: variable2B, ...rest1 } = object;
+
+//Example
+const person8 = {
+  name: "Alice",
+  age: 25,
+  country: "USA",
+};
+
+const { name16, age16, country16 } = person8;
+
+console.log(name16); // Output: 'Alice'
+console.log(age16); // Output: 25
+console.log(country16); // Output: 'USA'
