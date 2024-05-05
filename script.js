@@ -2516,5 +2516,70 @@ const fullStack3 = [
 ];
 
 for (const [first, second, third] of fullStack3) {
-  console.log(firrst, second, third);
+  console.log(first, second, third);
+}
+
+//Destructuring objects
+
+const rectangle1 = {
+  width: 20,
+  height: 10,
+  area: 200,
+};
+
+let { width, height, area, perimeter } = rectangle1;
+
+console.log(width, height, area, perimeter);
+
+//Renaming during destructuring
+let { width: w, height: h, area: ar, perimeter: p } = rectangle1;
+
+console.log(w, h, ar, p);
+
+//If the key is not found in the object the variable will be assigned to undefined.
+//Sometimes the key might not be in the object, in that case we can give a default value during declaration.
+//See the example
+let { width1, height1, area1, perimeter1 = 60 } = rectangle1;
+console.log(width1, height1, area1, perimeter1);
+
+//Object parameter without destructuring
+// Without destructuring
+const rect = {
+  width: 20,
+  height: 10,
+};
+const calculatePerimeter = (rectangle) => {
+  return 2 * (rectangle.width + rectangle.height);
+};
+
+console.log(calculatePerimeter(rect)); // 60
+//with destructuring
+
+//Object parameter with destructuring
+const calculatePerimeter1 = ({ width, height }) => {
+  return 2 * (width + height);
+};
+
+console.log(calculatePerimeter1(rect)); // 60
+
+const todoList = [
+  {
+    task: "Prepare JS Test",
+    time: "4/1/2020 8:30",
+    completed: true,
+  },
+  {
+    task: "Give JS Test",
+    time: "4/1/2020 10:00",
+    completed: false,
+  },
+  {
+    task: "Assess Test Result",
+    time: "4/1/2020 1:00",
+    completed: false,
+  },
+];
+
+for (const { task, time, completed } of todoList) {
+  console.log(task, time, completed);
 }
