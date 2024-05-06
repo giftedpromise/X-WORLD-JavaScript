@@ -2908,9 +2908,9 @@ class Person5 {
   }
 }
 
-const person21 = new Person("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
-const person22 = new Person("Lidiya", "Tekle", 28, "Finland", "Espoo");
-const person23 = new Person("John", "Doe", 50, "Mars", "Mars city");
+const person21 = new Person5("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
+const person22 = new Person5("Lidiya", "Tekle", 28, "Finland", "Espoo");
+const person23 = new Person5("John", "Doe", 50, "Mars", "Mars city");
 
 person21.setScore = 1;
 person21.setSkill = "HTML";
@@ -2932,3 +2932,155 @@ console.log(person23.getSkills);
 console.log(person21.getPersonInfo());
 console.log(person22.getPersonInfo());
 console.log(person23.getPersonInfo());
+
+/* Static method
+The static keyword defines a static method for a class.
+ Static methods are not called on instances of the class. Instead, they are called on the class itself. 
+ These are often utility functions, such as functions to create or clone objects.
+  An example of static method is Date.now().
+ The now method is called directly from the class.
+ The static methods are methods which can be used as utility functions.
+
+ */
+class Person6 {
+  constructor(firstName, lastName, age, country, city) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+    this.score = 0;
+    this.skills = [];
+  }
+  getFullName() {
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName;
+  }
+  get getScore() {
+    return this.score;
+  }
+  get getSkills() {
+    return this.skills;
+  }
+  set setScore(score) {
+    this.score += score;
+  }
+  set setSkill(skill) {
+    this.skills.push(skill);
+  }
+  getPersonInfo() {
+    let fullName = this.getFullName();
+    let skills =
+      this.skills.length > 0 &&
+      this.skills.slice(0, this.skills.length - 1).join(", ") +
+        ` and ${this.skills[this.skills.length - 1]}`;
+
+    let formattedSkills = skills ? `He knows ${skills}` : "";
+
+    let info = `${fullName} is ${this.age}. He lives ${this.city}, ${this.country}. ${formattedSkills}`;
+    return info;
+  }
+  static favoriteSkill() {
+    const skills = ["HTML", "CSS", "JS", "React", "Python", "Node"];
+    const index = Math.floor(Math.random() * skills.length);
+    return skills[index];
+  }
+  static showDateTime() {
+    let now = new Date();
+    let year = now.getFullYear();
+    let month = now.getMonth() + 1;
+    let date = now.getDate();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    if (hours < 10) {
+      hours = "0" + hours;
+    }
+    if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+
+    let dateMonthYear = date + "." + month + "." + year;
+    let time = hours + ":" + minutes;
+    let fullTime = dateMonthYear + " " + time;
+    return fullTime;
+  }
+}
+
+console.log(Person6.favoriteSkill());
+console.log(Person6.showDateTime());
+
+//Inheritance
+//Using inheritance we can access all the properties and the methods of the parent class.
+//This reduces repetition of code.
+// If you remember, we have a Person parent class and we will create children from it.
+//Our children class could be student, teach etc.
+
+class Student extends Person5 {
+  saySomething() {
+    console.log("I am a child of the person class");
+  }
+}
+
+const s1 = new Student("Asabeneh", "Yetayeh", "Finland", 250, "Helsinki");
+console.log(s1);
+console.log(s1.saySomething());
+console.log(s1.getFullName());
+console.log(s1.getPersonInfo());
+
+//Exercise
+//Create an Animal class. The class will have name, age, color, legs properties and create different methods
+//Create a Dog and Cat child class from the Animal Class
+
+class Animal {
+  constructor(name, age, color, legs) {
+    this.name = name;
+    this.age = age;
+    this.color = color;
+    this.legs = legs;
+  }
+
+  getInfo() {
+    return `${this.name} is a ${this.color} animal with ${this.legs} legs, and is ${this.age} years old.`;
+  }
+}
+
+// Define the Dog child class that inherits from Animal
+class Dog extends Animal {
+  // Constructor to initialize properties specific to Dog
+  constructor(name, age, color) {
+    // Call the parent class constructor with common properties
+    super(name, age, color, 4);
+  }
+
+  // Method to represent the dog sound
+  makeSound() {
+    return "Woof woof!";
+  }
+}
+
+// Define the Cat child class that inherits from Animal
+class Cat extends Animal {
+  // Constructor to initialize properties specific to Cat
+  constructor(name, age, color) {
+    // Call the parent class constructor with common properties
+    super(name, age, color, 4);
+  }
+
+  // Method to represent the cat sound
+  makeSound() {
+    return "Meow meow!";
+  }
+}
+
+// Create instances of Dog and Cat
+const myDog = new Dog("Buddy", 3, "brown");
+const myCat = new Cat("Whiskers", 2, "gray");
+
+// Access properties and methods
+console.log(myDog.getInfo()); // Output: Buddy is a brown animal with 4 legs, and is 3 years old.
+console.log(myCat.getInfo()); // Output: Whiskers is a gray animal with 4 legs, and is 2 years old.
+
+console.log(myDog.makeSound()); // Output: Woof woof!
+console.log(myCat.makeSound()); // Output: Meow meow!
+const animal = new Animal("Pupy", 5, "White", 4);
+console.log(animal);
