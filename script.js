@@ -2688,6 +2688,13 @@ Everything in JavScript is an object, with its properties and methods. We create
  The class defines attributes and the behavior of the object, while the object, on the other hand, 
  represents the class.
 
+ Classes in JavaScript are blueprints for creating objects with specific properties and methods.
+They help encapsulate data and behavior, promote code reuse, and support inheritance.
+Classes provide a structured way to organize and manage code.
+By using classes, you can create clean, efficient, and maintainable code.
+
+
+
 Once we create a class we can create object from it whenever we want. 
 Creating an object from a class is called class instantiation.
  
@@ -2700,11 +2707,43 @@ class Person {
   constructor(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
   }
 }
-const person9 = new Person("Asebenah", "Musa");
+const person9 = new Person("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
 console.log(person9);
-const person10 = new Person("Lidiya", "Tekle");
+const person10 = new Person("Lidiya", "Tekle", 26, "USA", "Massachusset");
 const person11 = new Person("Abraham", "Yetayeh");
 console.log(person10);
 console.log(person11);
+
+//Default values with constructor
+//The constructor function properties may have a default value like other regular functions.
+
+class Person {
+  constructor(
+    firstName = "Promise",
+    lastName = "Nwankwo",
+    age = 32,
+    country = "Nigeria",
+    city = "Lagos"
+  ) {
+    this.firstName - firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+  }
+}
+
+const person12 = new Person();
+console.log(person12);
+const person14 = new Person("Lidiya", "Tekle", 28, "Finland", "Espoo");
+console.log(person14);
+
+//Class methods
+//The constructor inside a class is a builtin function which allow us to create a blueprint for the object.
+// In a class we can create class methods.
+//Methods are JavaScript functions inside the class. Let us create some class methods.
