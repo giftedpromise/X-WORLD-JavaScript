@@ -2676,3 +2676,35 @@ const user = {
 
 const copiedUser = { ...user };
 console.log(copiedUser);
+
+//DAY 15
+//TOPIC COVERED - CLASSES
+
+/* Classes
+JavaScript is an object oriented programming language. 
+Everything in JavScript is an object, with its properties and methods. We create class to create an object.
+ A Class is like an object constructor, or a "blueprint" for creating objects. 
+ We instantiate a class to create an object. 
+ The class defines attributes and the behavior of the object, while the object, on the other hand, 
+ represents the class.
+
+Once we create a class we can create object from it whenever we want. 
+Creating an object from a class is called class instantiation.
+ 
+Class Instantiation
+Instantiation class means creating an object from a class. 
+We need the keyword new and we call the name of the class after the word new.
+*/
+
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+const person9 = new Person("Asebenah", "Musa");
+console.log(person9);
+const person10 = new Person("Lidiya", "Tekle");
+const person11 = new Person("Abraham", "Yetayeh");
+console.log(person10);
+console.log(person11);
