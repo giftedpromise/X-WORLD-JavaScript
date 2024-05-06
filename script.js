@@ -2722,7 +2722,7 @@ console.log(person11);
 //Default values with constructor
 //The constructor function properties may have a default value like other regular functions.
 
-class Person {
+class Person1 {
   constructor(
     firstName = "Promise",
     lastName = "Nwankwo",
@@ -2738,12 +2738,197 @@ class Person {
   }
 }
 
-const person12 = new Person();
+const person12 = new Person1();
 console.log(person12);
-const person14 = new Person("Lidiya", "Tekle", 28, "Finland", "Espoo");
+const person14 = new Person1("Lidiya", "Tekle", 28, "Finland", "Espoo");
 console.log(person14);
 
 //Class methods
 //The constructor inside a class is a builtin function which allow us to create a blueprint for the object.
 // In a class we can create class methods.
 //Methods are JavaScript functions inside the class. Let us create some class methods.
+class Person2 {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+  }
+  getFullName() {
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName;
+  }
+}
+
+const person15 = new Person2("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
+const person16 = new Person2("Lidiya", "Tekle", 28, "Finland", "Espoo");
+
+console.log(person15.getFullName());
+console.log(person16.getFullName());
+
+/*A method could be regular method or a getter or a setter. Let us see, getter and setter.
+
+getter
+The get method allow us to access value from the object.
+ We write a get method using keyword get followed by a function. 
+Instead of accessing properties directly from the object we use getter to get the value.
+ See the example below
+
+ */
+class Person3 {
+  constructor(firstName, lastName, age, country, city) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+    this.score = 0;
+    this.skills = [];
+  }
+  getFullName() {
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName;
+  }
+
+  get getScore() {
+    return this.score;
+  }
+
+  get getSkill() {
+    return this.skills;
+  }
+}
+
+const person17 = new Person3("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
+const person18 = new Person3("Lidiya", "Tekle", 28, "Finland", "Espoo");
+
+console.log(person17.getScore); // We do not need parenthesis to call a getter method
+console.log(person8.getScore);
+
+console.log(person17.getSkills);
+console.log(person18.getSkills);
+
+//setter
+//The setter method allow us to modify the value of certain properties.
+// We write a setter method using keyword set followed by a function. See the example bellow.
+
+class Person4 {
+  constructor(firstName, lastName, age, country, city) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+    this.score = 0;
+    this.skills = [];
+  }
+  getFullName() {
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName;
+  }
+  get getScore() {
+    return this.score;
+  }
+  get getSkills() {
+    return this.skills;
+  }
+
+  set setScore(score) {
+    this.score += score;
+  }
+
+  set setSkill(skill) {
+    this.skills.push(skill);
+  }
+}
+
+const person19 = new Person4("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
+const person20 = new Person4("Lidiya", "Tekle", 28, "Finland", "Espoo");
+
+person19.setScore = 1;
+person19.setSkill = "HTML";
+person19.setSkill = "CSS";
+person19.setSkill = "JavaScript";
+
+person20.setScore = 1;
+person20.setSkill = "Planning";
+person20.setSkill = "Managing";
+person20.setSkill = "Organizing";
+
+console.log(person19.score);
+console.log(person20.score);
+
+console.log(person19.skills);
+console.log(person20.skills);
+
+//Do not be puzzled by the difference between regular method and a getter.
+// If you know how to make a regular method you are good.
+//Let us add regular method called getPersonInfo in the Person class.
+
+class Person5 {
+  constructor(firstName, lastName, age, country, city) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.country = country;
+    this.city = city;
+    this.score = 0;
+    this.skills = [];
+  }
+  getFullName() {
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName;
+  }
+  get getScore() {
+    return this.score;
+  }
+  get getSkills() {
+    return this.skills;
+  }
+
+  set setScore(score) {
+    this.score += score;
+  }
+
+  set setSkill(skill) {
+    this.skills.push(skill);
+  }
+
+  getPersonInfo() {
+    let fullName = this.getFullName();
+    let skills =
+      this.skills.length > 0 &&
+      this.skills.slice(0, this.skills.length - 1).join(", ") +
+        ` and ${this.skills[this.skills.length - 1]}`;
+    let formattedSkills = skills ? `He knows ${skills}` : " ";
+
+    let info = `${fullName} is ${this.age}. He lives in ${this.city}, ${this.country}. ${formattedSkills} `;
+    return info;
+  }
+}
+
+const person21 = new Person("Asabeneh", "Yetayeh", 250, "Finland", "Helsinki");
+const person22 = new Person("Lidiya", "Tekle", 28, "Finland", "Espoo");
+const person23 = new Person("John", "Doe", 50, "Mars", "Mars city");
+
+person21.setScore = 1;
+person21.setSkill = "HTML";
+person21.setSkill = "CSS";
+person21.setSkill = "JavaScript";
+
+person22.setScore = 1;
+person22.setSkill = "Planning";
+person22.setSkill = "Managing";
+person22.setSkill = "Organizing";
+
+console.log(person21.getScore);
+console.log(person22.getScore);
+
+console.log(person21.getSkills);
+console.log(person22.getSkills);
+console.log(person23.getSkills);
+
+console.log(person21.getPersonInfo());
+console.log(person22.getPersonInfo());
+console.log(person23.getPersonInfo());
