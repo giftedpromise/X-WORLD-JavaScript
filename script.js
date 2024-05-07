@@ -3071,3 +3071,16 @@ class Cat extends Animal {
     return "Meow meow!";
   }
 }
+
+// Create instances of Dog and Cat
+const myDog = new Dog("Buddy", 3, "brown");
+const myCat = new Cat("Whiskers", 2, "gray");
+
+// Access properties and methods
+console.log(myDog.getInfo()); // Output: Buddy is a brown animal with 4 legs, and is 3 years old.
+console.log(myCat.getInfo()); // Output: Whiskers is a gray animal with 4 legs, and is 2 years old.
+
+console.log(myDog.makeSound()); // Output: Woof woof!
+console.log(myCat.makeSound()); // Output: Meow meow!
+const animal = new Animal("Pupy", 5, "White", 4);
+console.log(animal);
