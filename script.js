@@ -3122,6 +3122,59 @@ Parallel Execution: Asynchronous operations can run in parallel with other tasks
 Callbacks, Promises, and Async/Await: JavaScript provides different ways to handle asynchronous operations,
  including callbacks, promises, and the async/await syntax.
 
+
+
+*/
+
+//Callbacks
+
+//A callback function is a function that you pass as an argument to another function.
+// The function that receives the callback will call it at the appropriate time,
+//usually when a certain event or task is completed.
+function greet(name, callback) {
+  console.log(`Hello, ${name}`);
+  callback();
+}
+
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+greet("Alice", sayGoodbye);
+
+//The greet function is the function that receives another function as an argument.
+//In this case, the function it receives as an argument is sayGoodbye.
+
+//Used for Asynchronous Operations
+function fetchData(callback) {
+  setTimeout(() => {
+    const data = "Fetched data";
+    callback(data);
+  }, 1000); // Simulating a delay of 1 second
+}
+
+fetchData((data) => {
+  console.log(data); // Output: 'Fetched data' after 1 second
+});
+
+// Callback
+const doSomething = (callback) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    callback("It did not go well", skills);
+  }, 2000);
+};
+
+const callback1 = (err, result) => {
+  if (err) {
+    return console.log(err);
+  }
+  return console.log(result);
+};
+
+doSomething(callback1);
+
+/*
 A Promise is a way to handle asynchronous operations in JavaScript. 
 It allows handlers with an asynchronous action's eventual success value or failure reason. 
 In JavaScript, promises are a way to handle asynchronous operations, 
@@ -3134,5 +3187,24 @@ States: A promise can be in one of three states:
 Pending: The promise is still in progress.
 Fulfilled: The operation was successful, and the promise has a value.
 Rejected: The operation failed, and the promise has a reason (error).
+
+
+Key Concepts to Understand:
+Creating Promises:
+Promises are created using the Promise constructor.
+The constructor takes a function (executor) with resolve and reject parameters.
+*/
+
+let myPromise = new Promise((resolve, reject) => {
+  setTimer(() => {
+    resolve("Success!"); // or reject('Error!')
+  }, 1000);
+});
+
+/* Handling Promises:
+Promises are handled using .then(), .catch(), and .finally() methods.
+.then() handles the fulfillment of the promise.
+.catch() handles the rejection of the promise.
+.finally() executes code regardless of whether the promise is fulfilled or rejected.
 
 */
