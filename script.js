@@ -3071,38 +3071,3 @@ class Cat extends Animal {
     return "Meow meow!";
   }
 }
-
-// Create instances of Dog and Cat
-const myDog = new Dog("Buddy", 3, "brown");
-const myCat = new Cat("Whiskers", 2, "gray");
-
-// Access properties and methods
-console.log(myDog.getInfo()); // Output: Buddy is a brown animal with 4 legs, and is 3 years old.
-console.log(myCat.getInfo()); // Output: Whiskers is a gray animal with 4 legs, and is 2 years old.
-
-console.log(myDog.makeSound()); // Output: Woof woof!
-console.log(myCat.makeSound()); // Output: Meow meow!
-const animal = new Animal("Pupy", 5, "White", 4);
-console.log(animal);
-
-//Day 16
-//topic covered: JSON
-
-/* JSON stands for JavaScript Object Notation. 
-The JSON syntax is derived from JavaScript object notation syntax,
- but the JSON format is text or string only.
-  JSON is a light weight data format for storing and transporting. 
-  JSON is mostly used when data is sent from a server to a client. 
-  JSON is an easier-to-use alternative to XML.
-*/
-const jsonData = {
-  name: "Alice",
-  age: 25,
-};
-
-const data = JSON.parse(jsonData);
-console.log(data);
-
-const jsonObject = { name: "Alice", age: 25 };
-const jsonString = JSON.stringify(jsonObject);
-console.log(jsonString); // Output: '{"name":"Alice","age":25}'
