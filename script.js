@@ -3105,3 +3105,34 @@ console.log(data);
 const jsonObject = { name: "Alice", age: 25 };
 const jsonString = JSON.stringify(jsonObject);
 console.log(jsonString); // Output: '{"name":"Alice","age":25}'
+
+//DAY 18
+//TOPIC COVERED: PROMISES
+/* 
+
+Asynchronous operations are tasks or processes in a program that can run independently of the main program flow,
+ allowing the program to continue executing other tasks while waiting for the asynchronous operation to complete. 
+ This is especially useful for handling operations that may take a long time to finish, 
+such as fetching data from a server, processing large files, or performing complex computations.
+
+Key Characteristics of Asynchronous Operations:
+Non-Blocking: Asynchronous operations do not block the execution of other code in the program. 
+This allows the program to remain responsive, especially in user-facing applications such as web browsers.
+Parallel Execution: Asynchronous operations can run in parallel with other tasks, which can improve performance and efficiency.
+Callbacks, Promises, and Async/Await: JavaScript provides different ways to handle asynchronous operations,
+ including callbacks, promises, and the async/await syntax.
+
+A Promise is a way to handle asynchronous operations in JavaScript. 
+It allows handlers with an asynchronous action's eventual success value or failure reason. 
+In JavaScript, promises are a way to handle asynchronous operations, 
+such as fetching data from a server or reading files, in a more organized and easier-to-understand way.
+
+Promise Basics:
+Definition: A promise is an object that represents an asynchronous operation, 
+which can either succeed (fulfilled) or fail (rejected).
+States: A promise can be in one of three states:
+Pending: The promise is still in progress.
+Fulfilled: The operation was successful, and the promise has a value.
+Rejected: The operation failed, and the promise has a reason (error).
+
+*/
