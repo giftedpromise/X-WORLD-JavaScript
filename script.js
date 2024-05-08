@@ -3209,7 +3209,7 @@ Promises are handled using .then(), .catch(), and .finally() methods.
 .finally() executes code regardless of whether the promise is fulfilled or rejected.
 
 
-*/ s;
+*/
 myPromise
   .then((result) => {
     console.log("Result:", result);
@@ -3407,3 +3407,112 @@ querySelector: can be used to select HTML element by its tag name, id or class.
 If the tag name is used it selects only the first element.
 
 */
+
+let firstTitle1 = document.querySelector("h1"); // select the first available h1 element
+let firstTitle2 = document.querySelector("#first-title"); // select id with first-title
+let firstTitle3 = document.querySelector(".title"); // select the first available element with class title
+
+//querySelectorAll: can be used to select html elements by its tag name or class.
+//It returns a nodeList which is an array like object which supports array methods.
+// We can use for loop or forEach to loop through each nodeList elements.
+
+const allTitles4 = document.querySelectorAll("h1");
+
+console.log(allTitles4.length); // 4
+for (let i = 0; i < allTitles4.length; i++) {
+  console.log(allTitles4[i]);
+}
+
+allTitles4.forEach((title) => console.log(title));
+const allTitles5 = document.querySelectorAll(".title"); // the same goes for selecting using class
+
+//Adding attribute
+//An attribute is added in the opening tag of HTML which gives additional information about the element.
+//Common HTML attributes: id, class, src, style, href,disabled, title, alt.
+
+const titles = document.querySelectorAll("h1");
+titles[3].className = "title";
+titles[3].id = "fourth-title";
+
+//Adding attribute using setAttribute
+//The setAttribute() method set any html attribute.
+//It takes two parameters the type of the attribute and the name of the attribute.
+//Let's add class and id attribute for the fourth title.
+
+titles[2].setAttribute("class", "third");
+titles[2].setAttribute("id", "third");
+
+//Adding attribute without setAttribute
+//We can use normal object setting method to set an attribute but this can not work for all elements.
+// Some attributes are DOM object property and they can be set directly.
+titles[3].className = "title";
+titles[3].id = "fourth-title";
+
+//dding class using classList
+//The class list method is a good method to append additional class.
+//It does not override the original class if a class exists rather it adds additional class for the element.
+
+//another way to setting an attribute: append the class, doesn't over ride
+titles[3].classList.add("title", "header-title");
+
+//Removing class using remove
+//imilar to adding we can also remove class from an element.
+//We can remove a specific class from an element.
+
+//another way to setting an attribute: append the class, doesn't over ride
+titles[3].classList.remove("title", "header-title");
+
+//Adding Text to HTML element
+//An HTML is a build block of an opening tag, a closing tag and a text content.
+// We can add a text content using the property textContent or *innerHTML.
+
+//Adding Text content using textContent
+//The textContent property is used to add text to an HTML element.
+
+const titles1 = document.querySelectorAll("h1");
+titles1[3].textContent = "Fourth Title";
+
+/*Adding Text Content using innerHTML
+Most people get confused between textContent and innerHTML. 
+textContent is meant to add text to an HTML element, 
+however innerHTML can add a text or HTML element or elements as a child.
+
+Text Content
+We assign textContent HTML object property to a text
+const titles1 = document.querySelectorAll("h1");
+titles1[3].textContent = "Fourth Title";
+*/
+
+const lists = `
+    <li>30Days Of Python Challenge Done</li>
+            <li>30 Days Of JavaScript Challenge Ongoing</li>
+            <li>30 Days Of React Challenge Coming</li>
+            <li>30 Days Of FullStack Challenge Coming</li>
+            <li>30 Days Of Data Analysis Challenge Coming</li>
+            <li>30 Days Of React Native Challenge Coming</li>
+            <li>30 Days Of Machine Learning Challenge Coming</li>`;
+const ul = document.querySelector("ul");
+ul.innerHTML = lists;
+
+//dding Style Background Color
+//Let us add some style to our titles. If the element has even index we give it green color else red.
+
+const titles2 = document.querySelectorAll("h1");
+titles2.forEach((title, i) => {
+  title.style.fontSize = "24px"; // all titles will have 24px font size
+  if (i % 2 === 0) {
+    title.style.backgroundColor = "green";
+  } else {
+    title.style.backgroundColor = "red";
+  }
+});
+
+const titles3 = document.querySelectorAll("h1");
+titles3.forEach((title, i) => {
+  title.style.fontSize = "24px";
+  if (i % 2 === 0) {
+    title.style.fontSize = "20px";
+  } else {
+    title.style.fontSize = "30px";
+  }
+});
