@@ -3207,8 +3207,9 @@ Promises are handled using .then(), .catch(), and .finally() methods.
 .then() handles the fulfillment of the promise.
 .catch() handles the rejection of the promise.
 .finally() executes code regardless of whether the promise is fulfilled or rejected.
-*/
 
+
+*/ s;
 myPromise
   .then((result) => {
     console.log("Result:", result);
@@ -3352,3 +3353,57 @@ function outerFunction() {
 
 const closure = outerFunction();
 closure(); // Output: 'I am from the outer function'
+
+//DAY 21
+//TOPIC COVERED: Document Object Model (DOM)
+//HTML document is structured as a JavaScript Object.
+// Every HTML element has a different properties which can help to manipulate it.
+// It is possible to get, create, append or remove HTML elements using JavaScript.
+
+/* Getting elements by tag name
+getElementsByTagName():takes a tag name as a string parameter and this method returns an HTMLCollection object. 
+An HTMLCollection is an array like object of HTML elements. 
+The length property provides the size of the collection. 
+Whenever we use this method we access the individual elements using index or 
+after loop through each individual items.
+*/
+
+const allTitles = document.getElementsByTagName("h1");
+console.log(allTitles); //HTMLCollections
+console.log(allTitles.length);
+
+for (let i = 0; i < allTitles.length; i++) {
+  console.log(allTitles[i]);
+}
+
+/* 
+
+Getting elements by class name
+getElementsByClassName() method returns an HTMLCollection object.
+ An HTMLCollection is an array like list of HTML elements. 
+ The length property provides the size of the collection.
+  It is possible to loop through all the HTMLCollection elements. 
+
+*/
+
+const classTitles = document.getElementsByClassName("title");
+
+console.log(classTitles); //HTMLCollections
+console.log(classTitles.length); // 4
+
+for (let i = 0; i < classTitles.length; i++) {
+  console.log(classTitles[i]); // prints each elements in the HTMLCollection
+}
+
+//Getting an element by id
+//getElementsById() targets a single HTML element. We pass the id without # as an argument.
+let firstTitle = document.getElementById("first-title");
+console.log(firstTitle);
+
+/* Getting elements by using querySelector methods
+The document.querySelector method can select an HTML or HTML elements by tag name, by id or by class name.
+
+querySelector: can be used to select HTML element by its tag name, id or class. 
+If the tag name is used it selects only the first element.
+
+*/
