@@ -3093,7 +3093,7 @@ The JSON syntax is derived from JavaScript object notation syntax,
   JSON is a light weight data format for storing and transporting. 
   JSON is mostly used when data is sent from a server to a client. 
   JSON is an easier-to-use alternative to XML.
-*/
+
 const jsonData = {
   name: "Alice",
   age: 25,
@@ -3105,6 +3105,7 @@ console.log(data);
 const jsonObject = { name: "Alice", age: 25 };
 const jsonString = JSON.stringify(jsonObject);
 console.log(jsonString); // Output: '{"name":"Alice","age":25}'
+*/
 
 //DAY 18
 //TOPIC COVERED: PROMISES
@@ -3196,7 +3197,7 @@ The constructor takes a function (executor) with resolve and reject parameters.
 */
 
 let myPromise = new Promise((resolve, reject) => {
-  setTimer(() => {
+  setTimeout(() => {
     resolve("Success!"); // or reject('Error!')
   }, 1000);
 });
@@ -3206,5 +3207,148 @@ Promises are handled using .then(), .catch(), and .finally() methods.
 .then() handles the fulfillment of the promise.
 .catch() handles the rejection of the promise.
 .finally() executes code regardless of whether the promise is fulfilled or rejected.
-
 */
+
+myPromise
+  .then((result) => {
+    console.log("Result:", result);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  })
+  .finally(() => {
+    console.log("Promise has been settled.");
+  });
+
+//Promise Chaining:
+///Promises can be chained together using .then().
+
+function anotherPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("New operation successful");
+    }, 1000); // Simulating a delay of 1 second
+  });
+}
+
+myPromise
+  .then((result) => {
+    console.log("Result:", result);
+    return anotherPromise();
+  })
+  .then((newResult) => {
+    console.log("New Result:", newResult);
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+  });
+
+//2nd Example
+
+// Promise
+const doPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const skills = ["HTML", "CSS", "JS"];
+    if (skills.length > 0) {
+      resolve(skills);
+    } else {
+      reject("Something wrong has happened");
+    }
+  }, 2000);
+});
+
+doPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((error) => console.log(error));
+
+//Fetch API
+//The Fetch API provides an interface for fetching resources (including across the network).
+const url = "https://restcountries.com/v2/all"; // countries api
+fetch(url)
+  .then((response) => response.json()) // accessing the API data as JSON
+  .then((data) => {
+    // getting the data
+    console.log(data);
+  })
+  .catch((error) => console.error(error)); // handling error if something wrong happens
+
+//Async and Await
+//Async and await is an elegant way to handle promises. It is easy to understand and it clean to write.
+
+const square2 = async function (n) {
+  return n * n;
+};
+const value1 = square2(2);
+console.log(value1);
+
+const fetchData1 = async () => {
+  try {
+    const response = await fetch(url);
+    const countries = await response.json();
+    console.log(countries);
+  } catch (err) {
+    console.error(err);
+  }
+};
+console.log("===== async and await");
+fetchData1();
+
+//DAY 19
+//TOPIC COVERED- CLOSURE
+
+//JavaScript allows writing function inside an outer function.
+// We can write as many inner functions as we want.
+//If inner function access the variables of outer function then it is called closure.
+
+function outerFunction() {
+  let count = 0;
+  function innerFunction() {
+    count++;
+    return count;
+  }
+
+  return innerFunction;
+}
+const innerFunc = outerFunction();
+
+console.log(innerFunc());
+console.log(innerFunc());
+console.log(innerFunc());
+
+//Example
+
+function outerFunction() {
+  let count = 0;
+  function plusOne() {
+    count++;
+    return count;
+  }
+  function minusOne() {
+    count--;
+    return count;
+  }
+
+  return {
+    plusOne: plusOne(),
+    minusOne: minusOne(),
+  };
+}
+const innerFuncs = outerFunction();
+
+console.log(innerFuncs.plusOne);
+console.log(innerFuncs.minusOne);
+
+function outerFunction() {
+  const outerVariable = "I am from the outer function";
+
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+
+  return innerFunction;
+}
+
+const closure = outerFunction();
+closure(); // Output: 'I am from the outer function'
