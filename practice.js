@@ -10,4 +10,4 @@ Set id and class attribute for all the paragraphs using different attribute sett
 
 */
 const firstParagraph = document.querySelector("p");
-firstParagraph[1];
+console.log(firstParagraph);
