@@ -22,7 +22,7 @@ console.log("Second paragraph:", secondParagraph);
 console.log("Third paragraph:", thirdParagraph);
 console.log("Fourth paragraph:", fourthParagraph);
 
-const allParagraphs = document.getElementsByTagName("p");
+const allParagraphs = document.querySelectorAll("p");
 
 console.log(allParagraphs);
 console.log(allParagraphs.length);
@@ -33,3 +33,6 @@ for (i = 0; i < allParagraphs.length; i++) {
 allParagraphs.forEach((paragraph, index) => {
   console.log(`Paragraph ${index + 1}:`, paragraph);
 });
+
+allParagraphs[3].textContent =
+  "My name is Promise Nwankwo and I am Frontend developer.";

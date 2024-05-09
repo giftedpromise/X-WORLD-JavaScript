@@ -3516,3 +3516,14 @@ titles3.forEach((title, i) => {
     title.style.fontSize = "30px";
   }
 });
+
+//DAY 22
+//TOPIC COVERED: DOM(Document Object Model)-Day 2
+/*Creating an Element
+To create an HTML element we use tag name. 
+
+Creating an HTML element using JavaScript is very simple and straight forward. 
+We use the method document.createElement().
+ The method takes an HTML element tag name as a string parameter.
+
+ */
