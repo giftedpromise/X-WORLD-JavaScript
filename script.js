@@ -3527,3 +3527,35 @@ We use the method document.createElement().
  The method takes an HTML element tag name as a string parameter.
 
  */
+
+let title = document.createElement("h1");
+title.className = "title";
+title.style.fontSize = "24px";
+title.textContent = "Creating HTML element DOM Day 2";
+console.log(title);
+
+/* Creating elements
+To create multiple elements we should use loop.
+ Using loop we can create as many HTML elements as we want.
+
+After we create the element we can assign value to the different properties of the HTML object.
+*/
+
+let titleA;
+for (let i = 0; i < 3; i++) {
+  titleA = document.createElement("h1");
+  titleA.className = "title";
+  titleA.style.fontSize = "24px";
+  titleA.textContent = i;
+  console.log(titleA);
+}
+
+let titleH1;
+for (let i = 0; i < 3; i++) {
+  titleH1 = document.createElement("h1");
+  titleH1.className = "title";
+  titleH1.style.fontSize = "24px";
+
+  titleH1.textContent = i;
+  console.log(titleH1);
+}
