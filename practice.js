@@ -11,3 +11,25 @@ Set id and class attribute for all the paragraphs using different attribute sett
 */
 const firstParagraph = document.querySelector("p");
 console.log(firstParagraph);
+
+const firstParagraph1 = document.querySelector("#first-paragraph");
+const secondParagraph = document.querySelector("#second-paragraph");
+const thirdParagraph = document.querySelector("#third-paragraph");
+const fourthParagraph = document.querySelector("#fourth-paragraph");
+
+console.log("First paragraph:", firstParagraph1);
+console.log("Second paragraph:", secondParagraph);
+console.log("Third paragraph:", thirdParagraph);
+console.log("Fourth paragraph:", fourthParagraph);
+
+const allParagraphs = document.getElementsByTagName("p");
+
+console.log(allParagraphs);
+console.log(allParagraphs.length);
+for (i = 0; i < allParagraphs.length; i++) {
+  console.log(allParagraphs[i]);
+}
+
+allParagraphs.forEach((paragraph, index) => {
+  console.log(`Paragraph ${index + 1}:`, paragraph);
+});
