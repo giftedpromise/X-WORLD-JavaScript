@@ -21,7 +21,7 @@ for (let i = 0; i <= 101; i++) {
   numberDiv.style.padding = "25px";
 
   numberDiv.style.textAlign = "center";
-  numberDiv.style.width = "calc((100% / 6) - 20px)";
+  numberDiv.style.width = "calc((100% / 6) - 25px)";
   numberDiv.style.margin = "2px";
   numberDiv.style.color = "white";
   numberDiv.style.fontWeight = "bold";
