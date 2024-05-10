@@ -3541,15 +3541,6 @@ To create multiple elements we should use loop.
 After we create the element we can assign value to the different properties of the HTML object.
 */
 
-let titleA;
-for (let i = 0; i < 3; i++) {
-  titleA = document.createElement("h1");
-  titleA.className = "title";
-  titleA.style.fontSize = "24px";
-  titleA.textContent = i;
-  console.log(titleA);
-}
-
 let titleH1;
 for (let i = 0; i < 3; i++) {
   titleH1 = document.createElement("h1");
@@ -3559,3 +3550,19 @@ for (let i = 0; i < 3; i++) {
   titleH1.textContent = i;
   console.log(titleH1);
 }
+
+/*Appending child to a parent element
+To see a created element on the HTML document we should append it to the parent as a child element.
+ We can access the HTML document body using document.body.
+ The document.body support the appendChild() method. 
+ */
+let titleA;
+for (let i = 0; i < 3; i++) {
+  titleA = document.createElement("h1");
+  titleA.className = "title";
+  titleA.style.fontSize = "24px";
+  titleA.textContent = i;
+  document.body.appendChild(title);
+  console.log(titleA);
+}
+A;
