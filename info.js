@@ -3,6 +3,7 @@ import { asabenehChallenges2020 } from "./info-data.js";
 console.log("Challenges Data:", asabenehChallenges2020);
 
 let wrapper = document.querySelector(".wrapper");
+wrapper.style.textAlign = "center";
 
 let yearSpan = document.createElement("span");
 yearSpan.style.fontSize = "70px"; // Change the font size for the year
@@ -72,14 +73,13 @@ const monthName = monthNames[monthIndex];
 
 const dateTimeString = `${monthName} ${day}, ${year} ${hours}:${minutes}:${seconds}`;
 
-let date = document.createElement("p");
-date.style.fontSize = "18px";
+let date = document.createElement("h4");
+date.style.fontSize = "16px";
 date.style.textAlign = "center";
 date.style.padding = "5px";
-date.style.display = "flex"; // Set display to flex
-date.style.justifyContent = "center"; // Center horizontally
-date.style.alignItems = "center"; // Center vertically
-
+date.style.display = "inline-block";
+date.style.letterSpacing = "2px";
+date.style.marginBottom = "1rem";
 date.textContent = `${dateTimeString}`;
 
 wrapper.appendChild(date);
@@ -89,3 +89,56 @@ setInterval(() => {
 
   date.style.backgroundColor = randomColor;
 }, 1000);
+
+let skills = document.querySelector(".skills");
+
+const topics = asabenehChallenges2020.challenges;
+// Define the names for each row
+const rowNames = [
+  "Python",
+  "JavaScript",
+  "HTML and CSS",
+  "React",
+  "ReactNative",
+  "Fullstack",
+  "Data Analysis",
+  "Machine Learning",
+];
+
+// Get the rows
+const rows = document.querySelectorAll(".row");
+
+// Function to create details element with topics
+const createTopicDetails = (topics) => {
+  const topicDetails = document.createElement("details");
+
+  const topicUl = document.createElement("ul");
+  topics.forEach((topic) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = topic;
+    topicUl.appendChild(listItem);
+  });
+  topicDetails.appendChild(topicUl);
+
+  return topicDetails;
+};
+
+// Add details element to the middle column of each row
+rows.forEach((row, index) => {
+  const middleColumn = document.createElement("div");
+  middleColumn.classList.add("column", "middle");
+
+  if (index < topics.length) {
+    const topicDetails = createTopicDetails(topics[index].topics);
+
+    const summary = document.createElement("summary");
+    summary.textContent = rowNames[index];
+    topicDetails.appendChild(summary);
+
+    middleColumn.appendChild(topicDetails);
+  }
+
+  // Append middle column to row
+  row.appendChild(middleColumn);
+  wrapper.appendChild(row);
+});
