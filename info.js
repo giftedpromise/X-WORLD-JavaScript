@@ -94,16 +94,6 @@ let skills = document.querySelector(".skills");
 
 const topics = asabenehChallenges2020.challenges;
 // Define the names for each row
-const rowNames = [
-  "Python",
-  "JavaScript",
-  "HTML and CSS",
-  "React",
-  "ReactNative",
-  "Fullstack",
-  "Data Analysis",
-  "Machine Learning",
-];
 
 // Get the rows
 const rows = document.querySelectorAll(".row");
