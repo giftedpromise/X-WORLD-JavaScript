@@ -3565,3 +3565,9 @@ for (let i = 0; i < 3; i++) {
   document.body.appendChild(title);
   console.log(titleA);
 }
+
+//DAY 23
+//TOPIC COVERED
+///Introduction to JavaScript events
+//An event is an action that occurs in the web browser,
+//which the web browser feedbacks to you so that you can respond to it.
