@@ -3569,5 +3569,18 @@ for (let i = 0; i < 3; i++) {
 //DAY 23
 //TOPIC COVERED
 ///Introduction to JavaScript events
-//An event is an action that occurs in the web browser,
-//which the web browser feedbacks to you so that you can respond to it.
+/*An event is an action that occurs in the web browser,
+which the web browser feedbacks to you so that you can respond to it.
+Each event may have an event handler which is a block of code that will execute when the event occurs.
+
+An event handler is also known as an event listener.
+It listens to the event and executes when the event occurs.
+*/
+
+let btn = document.querySelector("#btn");
+
+function display() {
+  alert("It was clicked!");
+}
+
+btn.addEventListener("click", display);
