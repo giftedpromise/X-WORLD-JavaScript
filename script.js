@@ -3677,10 +3677,11 @@ you need to pass the same arguments as were passed to the addEventListener(). Fo
 //let btn = document.querySelector("#btn");
 
 // add the event listener
-let showAlert = function () {
+/*let showAlert = function () {
   alert("Clicked!");
 };
 btn.addEventListener("click", showAlert);
+*/
 
 // remove the event listener
 btn.removeEventListener("click", showAlert);
@@ -3723,3 +3724,19 @@ addEventListener("unload", (event) => {
 
 //Day 24
 //TOPIC COVERED: JavaScript Form
+
+const btn1 = document.querySelector("#btn1");
+const radioButtons = document.querySelectorAll('input[name="size"]');
+btn1.addEventListener("click", () => {
+  let selectedSize;
+  for (const radioButton of radioButtons) {
+    if (radioButton.checked) {
+      selectedSize = radioButton.value;
+      break;
+    }
+  }
+  // show the output:
+  output.innerText = selectedSize
+    ? `You selected ${selectedSize}`
+    : `You haven't selected any size`;
+});
