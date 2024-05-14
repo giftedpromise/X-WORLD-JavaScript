@@ -3626,3 +3626,15 @@ the code more difficult to maintain and extend.
 Second, it is a timing issue. If the element is loaded fully before the JavaScript code, 
 users can start interacting with the element on the webpage which will cause an error.
 */
+
+//2) DOM Level 0 event handlers
+//Each element has event handler properties such as onclick.
+//To assign an event handler, you set the property to a function as shown in the example:
+
+//let btn = document.querySelector("#btn");
+btn.onClick = function () {
+  alert("Clicked!");
+};
+
+//To remove the event handler, you set the value of the event handler property to null:
+btn.onclick = null;
