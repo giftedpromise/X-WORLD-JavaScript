@@ -3575,6 +3575,14 @@ Each event may have an event handler which is a block of code that will execute 
 
 An event handler is also known as an event listener.
 It listens to the event and executes when the event occurs.
+Event flow has two main models: event bubbling and event capturing.
+DOM Level 2 Event specifies that the event flow has three phases: 
+nt to an event listener
+The event object is accessible only within the event listener.
+Use preventDefault() method to prevent the default behavior of an event,
+but does not stop the event flow.
+Use stopPropagation() method to stop the flow of an event through the DOM tree,
+ but does not cancel the browser default behavior.
 */
 
 let btn = document.querySelector("#btn");
@@ -3592,4 +3600,29 @@ let btn = document.querySelector('#btn');
 btn.addEventListener('click',function() {
     alert('It was clicked!');
 });
+
+An event listener is a function with an explicit name if you intend to reuse it or 
+an anonymous function if you only use it once.
+
+An event can be handled by one or multiple event handlers.
+ If an event has multiple event handlers, all the event handlers will be executed when the event is fired.
+
+There are three ways to assign event handlers.
+*/
+
+//1) HTML event handler attributes
+
+function showAlert() {
+  alert("Clicked!");
+}
+
+/* Disadvantages of using HTML event handler attributes
+Assigning event handlers using HTML event handler attributes is considered
+ a bad practice and should be avoided as much as possible for the following reasons:
+
+First, the event handler code is mixed with the HTML code, which will make 
+the code more difficult to maintain and extend.
+
+Second, it is a timing issue. If the element is loaded fully before the JavaScript code, 
+users can start interacting with the element on the webpage which will cause an error.
 */
