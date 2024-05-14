@@ -3584,3 +3584,12 @@ function display() {
 }
 
 btn.addEventListener("click", display);
+
+/* A shorter way to register an event handler is to place all code in an anonymous function, like this:
+
+let btn = document.querySelector('#btn');
+
+btn.addEventListener('click',function() {
+    alert('It was clicked!');
+});
+*/
