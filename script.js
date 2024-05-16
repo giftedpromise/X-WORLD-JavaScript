@@ -3812,13 +3812,24 @@ console.table(bornIn1500);
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
 const lastFirstName = inventors.map(
-  (inventor) => `${inventors.first} ${inventors.last}`
+  (inventor) => `${inventor.first} ${inventor.last}`
 );
 
 console.log(lastFirstName);
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
+const ordered = inventors.sort(function (a, b) {
+  if (a.year > b.year) {
+    return 1;
+  } else {
+    return -1;
+  }
+});
 
+console.log(ordered);
+
+const orderd1 = inventors.sort((a, b) => (a.year > B.year ? 1 : -1));
+console.log(orderd1);
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
 
