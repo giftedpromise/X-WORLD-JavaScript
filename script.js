@@ -3828,38 +3828,6 @@ const ordered = inventors.sort(function (a, b) {
 
 console.log(ordered);
 
-const orderd1 = inventors.sort((a, b) => (a.year > B.year ? 1 : -1));
-console.log(orderd1);
-// Array.prototype.reduce()
-// 4. How many years did all the inventors live all together?
-
-// 5. Sort the inventors by years lived
-
-// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
-// https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
-// 7. sort Exercise
-// Sort the people alphabetically by last name
-
-// 8. Reduce Exercise
-// Sum up the instances of each of these
-const data = [
-  "car",
-  "car",
-  "truck",
-  "truck",
-  "bike",
-  "walk",
-  "car",
-  "van",
-  "bike",
-  "walk",
-  "car",
-  "van",
-  "car",
-  "truck",
-];
-
 const people1 = [
   { name: "Wes", year: 1988 },
   { name: "Kait", year: 1986 },
@@ -3921,4 +3889,47 @@ const getUserInfo = (firstName, lastName, country, title, skills) => {
 const skills = ["HTML", "CSS", "JS", "React"];
 console.log(
   getUserInfo("Asabeneh", "Yetayeh", "Finland", "FullStack Developer", skills)
+);
+
+class Parent {
+  constructor(firstName, lastName, country, title) {
+    // we bind the params with this class object using this keyword
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.country = country;
+    this.title = title;
+  }
+  getPersonInfo() {
+    return `${this.firstName} ${this.lastName},  a ${this.title} developer base in ${this.country} `;
+  }
+  parentMethod() {
+    // code goes here
+  }
+}
+
+const p1 = new Parent("Asabeneh", "Yetayeh", "Finland", "FullStack Developer");
+
+class Child extends Parent {
+  constructor(firstName, lastName, country, title, skills) {
+    super(firstName, lastName, country, title);
+    this.skills = skills;
+    // we bind the child params with the this keyword to this child object
+  }
+  getSkills() {
+    let len = this.skills.length;
+    return len > 0 ? this.skills.join(" ") : "No skills found";
+  }
+  childMethod() {
+    // code goes here
+  }
+}
+
+const skills1 = ["HTML", "CSS", "JS", "React"];
+
+const child = new Child(
+  "Asabeneh",
+  "Yetayeh",
+  "Finland",
+  "FullStack Developer",
+  skills1
 );
