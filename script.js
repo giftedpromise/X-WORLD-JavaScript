@@ -3923,3 +3923,13 @@ class Child extends Parent {
     // code goes here
   }
 }
+
+const skills1 = ["HTML", "CSS", "JS", "React"];
+
+const child = new Child(
+  "Asabeneh",
+  "Yetayeh",
+  "Finland",
+  "FullStack Developer",
+  skills1
+);
