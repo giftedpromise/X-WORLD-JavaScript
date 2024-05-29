@@ -3906,3 +3906,30 @@ class Parent {
     // code goes here
   }
 }
+
+const p1 = new Parent("Asabeneh", "Yetayeh", "Finland", "FullStack Developer");
+
+class Child extends Parent {
+  constructor(firstName, lastName, country, title, skills) {
+    super(firstName, lastName, country, title);
+    this.skills = skills;
+    // we bind the child params with the this keyword to this child object
+  }
+  getSkills() {
+    let len = this.skills.length;
+    return len > 0 ? this.skills.join(" ") : "No skills found";
+  }
+  childMethod() {
+    // code goes here
+  }
+}
+
+const skills1 = ["HTML", "CSS", "JS", "React"];
+
+const child = new Child(
+  "Asabeneh",
+  "Yetayeh",
+  "Finland",
+  "FullStack Developer",
+  skills1
+);
